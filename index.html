@@ -15,7 +15,6 @@
         }
         .chapter-card {
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
         .chapter-card:hover {
             transform: translateY(-3px);
@@ -160,14 +159,13 @@
     <script>
         let currentTopic = '';
         
-        // Chapter data for each topic (update filenames to match your actual files)
+        // Chapter data for each topic
         const topicChapters = {
             ancient: [
                 { id: 'chapter1', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता', file: 'ancient_1.html' },
                 { id: 'chapter2', name: 'Chapter 2: "राजा, किसान और नगर आर्हंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई॰पू॰ से 600 ई॰)"', file: 'ancient_2.html' },
                 { id: 'chapter3', name: 'Chapter 3: "बंधुत्व, जाति तथा वर्ग आर्हंभिक समाज (लगभग 600 ई॰पू॰ से 600 ईस्वी)"', file: 'ancient_3.html' },
                 { id: 'chapter4', name: 'Chapter 4: "विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)"', file: 'ancient_4.html' }
-                
             ],
             medieval: [
                 { id: 'chapter1', name: 'Chapter 1: Delhi Sultanate', file: 'medieval_1.html' },
@@ -180,6 +178,19 @@
                 { id: 'chapter3', name: 'Chapter 3: Post Independence', file: 'modern_3.html' }
             ]
         };
+
+        // Use event delegation for quiz buttons - this will work even after DOM changes
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('quiz-start-btn')) {
+                const topic = e.target.getAttribute('data-topic');
+                const chapterName = e.target.getAttribute('data-chapter-name');
+                const quizFile = e.target.getAttribute('data-quiz-file');
+                
+                if (topic && chapterName && quizFile) {
+                    loadQuiz(topic, chapterName, quizFile);
+                }
+            }
+        });
 
         function showHome() {
             document.getElementById('hero-section').style.display = 'block';
@@ -210,16 +221,21 @@
             chaptersContainer.innerHTML = '';
             
             const chapters = topicChapters[topic] || [];
-            chapters.forEach(chapter => {
+            chapters.forEach((chapter, index) => {
                 const chapterCard = document.createElement('div');
                 chapterCard.className = 'col-md-6 col-lg-4 mb-4';
                 chapterCard.innerHTML = `
-                    <div class="card chapter-card h-100 shadow" onclick="loadQuiz('${topic}', '${chapter.name}', '${chapter.file}')">
-                        <div class="card-body">
+                    <div class="card chapter-card h-100 shadow">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${chapter.name}</h5>
-                            <p class="card-text">Practice MCQs for this chapter</p>
-                            <div class="text-end">
-                                <small class="text-muted">Click to start quiz</small>
+                            <p class="card-text flex-grow-1">Practice MCQs for this chapter</p>
+                            <div class="mt-auto">
+                                <button class="btn btn-primary w-100 quiz-start-btn" 
+                                        data-topic="${topic}" 
+                                        data-chapter-name="${chapter.name}" 
+                                        data-quiz-file="${chapter.file}">
+                                    Start Quiz
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -242,6 +258,8 @@
         }
 
         function loadQuiz(topic, chapterName, quizFile) {
+            console.log('Loading quiz:', topic, chapterName, quizFile); // Debug log
+            
             document.getElementById('hero-section').style.display = 'none';
             document.getElementById('topics-section').style.display = 'none';
             document.getElementById('chapters-section').style.display = 'none';
