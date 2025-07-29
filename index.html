@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice MCQs by Topic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .topic-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+        }
+        .chapter-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .chapter-card:hover {
+            transform: translateY(-3px);
+        }
+        .back-btn {
+            margin-bottom: 20px;
+        }
+        .quiz-section {
+            min-height: 80vh;
+        }
+        
+        /* Quiz-specific styles */
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            cursor: pointer;
+            padding: 10px;
+        }
+        .correct {
+            background-color: #d4edda !important;
+            color: green;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            color: red;
+        }
+        .explanation {
+            color: blue;
+        }
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showHome()">MCQ Practice</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showHome()">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ancient
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="loadQuizDirect('ancient', 'Chapter-1: Indus Valley Civilization', 'ancient_1.html')">Chapter-1</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Practice MCQs by Topic</h1>
+            <p class="lead">Sharpen your knowledge by practicing topic-wise multiple-choice questions.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3" onclick="showTopics()">Start Practicing</a>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics-section" class="topics py-5" style="display: none;">
+        <div class="container">
+            <button class="btn btn-secondary back-btn" onclick="showHome()">← Back to Home</button>
+            <h2 class="text-center mb-5">Choose a Topic</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card topic-card h-100 shadow" onclick="showChapters('ancient')">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ancient History</h5>
+                            <p class="card-text">Explore questions from ancient civilizations and early history.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card topic-card h-100 shadow" onclick="showChapters('medieval')">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Medieval History</h5>
+                            <p class="card-text">Test your knowledge of medieval periods and kingdoms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card topic-card h-100 shadow" onclick="showChapters('modern')">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Modern History</h5>
+                            <p class="card-text">Practice questions from modern era and recent history.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section id="chapters-section" class="chapters py-5" style="display: none;">
+        <div class="container">
+            <button class="btn btn-secondary back-btn" onclick="showTopics()">← Back to Topics</button>
+            <h2 class="text-center mb-5" id="chapters-title">Choose a Chapter</h2>
+            <div class="row" id="chapters-container">
+                <!-- Chapters will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="quiz-section py-5" style="display: none;">
+        <div class="container">
+            <button class="btn btn-secondary back-btn" onclick="goBackToChapters()">← Back to Chapters</button>
+            <div id="quiz-content">
+                <!-- Quiz content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">© 2024 MCQ Practice. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentTopic = '';
+        
+        // Chapter data for each topic (update filenames to match your actual files)
+        const topicChapters = {
+            ancient: [
+                { id: 'chapter1', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता', file: 'ancient_1.html' },
+                { id: 'chapter2', name: 'Chapter 2: "राजा, किसान और नगर आर्हंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई॰पू॰ से 600 ई॰)"', file: 'ancient_2.html' },
+                { id: 'chapter3', name: 'Chapter 3: "बंधुत्व, जाति तथा वर्ग आर्हंभिक समाज (लगभग 600 ई॰पू॰ से 600 ईस्वी)"', file: 'ancient_3.html' },
+                { id: 'chapter4', name: 'Chapter 4: "विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)"', file: 'ancient_4.html' }
+                
+            ],
+            medieval: [
+                { id: 'chapter1', name: 'Chapter 1: Delhi Sultanate', file: 'medieval_1.html' },
+                { id: 'chapter2', name: 'Chapter 2: Mughal Empire', file: 'medieval_2.html' },
+                { id: 'chapter3', name: 'Chapter 3: Regional Kingdoms', file: 'medieval_3.html' }
+            ],
+            modern: [
+                { id: 'chapter1', name: 'Chapter 1: British Colonial Rule', file: 'modern_1.html' },
+                { id: 'chapter2', name: 'Chapter 2: Freedom Struggle', file: 'modern_2.html' },
+                { id: 'chapter3', name: 'Chapter 3: Post Independence', file: 'modern_3.html' }
+            ]
+        };
+
+        function showHome() {
+            document.getElementById('hero-section').style.display = 'block';
+            document.getElementById('topics-section').style.display = 'none';
+            document.getElementById('chapters-section').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'none';
+        }
+
+        function showTopics() {
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('topics-section').style.display = 'block';
+            document.getElementById('chapters-section').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'none';
+        }
+
+        function showChapters(topic) {
+            currentTopic = topic;
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('topics-section').style.display = 'none';
+            document.getElementById('chapters-section').style.display = 'block';
+            document.getElementById('quiz-section').style.display = 'none';
+            
+            // Update title
+            document.getElementById('chapters-title').textContent = `${topic.charAt(0).toUpperCase() + topic.slice(1)} History - Choose a Chapter`;
+            
+            // Load chapters
+            const chaptersContainer = document.getElementById('chapters-container');
+            chaptersContainer.innerHTML = '';
+            
+            const chapters = topicChapters[topic] || [];
+            chapters.forEach(chapter => {
+                const chapterCard = document.createElement('div');
+                chapterCard.className = 'col-md-6 col-lg-4 mb-4';
+                chapterCard.innerHTML = `
+                    <div class="card chapter-card h-100 shadow" onclick="loadQuiz('${topic}', '${chapter.name}', '${chapter.file}')">
+                        <div class="card-body">
+                            <h5 class="card-title">${chapter.name}</h5>
+                            <p class="card-text">Practice MCQs for this chapter</p>
+                            <div class="text-end">
+                                <small class="text-muted">Click to start quiz</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                chaptersContainer.appendChild(chapterCard);
+            });
+        }
+
+        function goBackToChapters() {
+            if (currentTopic) {
+                showChapters(currentTopic);
+            } else {
+                showTopics();
+            }
+        }
+
+        function loadQuizDirect(topic, chapterName, quizFile) {
+            currentTopic = topic;
+            loadQuiz(topic, chapterName, quizFile);
+        }
+
+        function loadQuiz(topic, chapterName, quizFile) {
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('topics-section').style.display = 'none';
+            document.getElementById('chapters-section').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'block';
+            
+            // Show loading message
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-3">Loading ${chapterName} quiz...</p>
+                </div>
+            `;
+            
+            // Load quiz content
+            setTimeout(() => {
+                loadQuizContent(topic, chapterName, quizFile);
+            }, 1000);
+        }
+
+        function loadQuizContent(topic, chapterName, quizFile) {
+            fetch(`./${quizFile}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Parse the HTML content
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Extract the quiz container content
+                    const quizContainer = doc.querySelector('.container .col-lg-8, .container .col-md-10');
+                    
+                    if (quizContainer) {
+                        // Clean up existing quiz scripts and variables
+                        cleanupPreviousQuiz();
+                        
+                        // Insert the quiz content
+                        document.getElementById('quiz-content').innerHTML = quizContainer.outerHTML;
+                        
+                        // Extract and execute the JavaScript from the loaded quiz
+                        const scripts = doc.querySelectorAll('script');
+                        scripts.forEach(script => {
+                            if (script.textContent.trim()) {
+                                try {
+                                    // Create a new script element and execute it
+                                    const newScript = document.createElement('script');
+                                    newScript.textContent = script.textContent;
+                                    document.body.appendChild(newScript);
+                                } catch (error) {
+                                    console.error('Error executing quiz script:', error);
+                                }
+                            }
+                        });
+                        
+                        // Initialize the loaded quiz
+                        setTimeout(() => {
+                            if (typeof window.loadQuiz === 'function') {
+                                window.loadQuiz();
+                            }
+                        }, 200);
+                        
+                    } else {
+                        throw new Error('Quiz content container not found in file');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading quiz:', error);
+                    document.getElementById('quiz-content').innerHTML = `
+                        <div class="alert alert-danger text-center">
+                            <h5>Error Loading Quiz</h5>
+                            <p>Could not load the quiz content from: <code>${quizFile}</code></p>
+                            <p class="mt-2"><small>Error: ${error.message}</small></p>
+                            <p class="mt-2"><small>Please make sure the file exists in the root directory.</small></p>
+                        </div>
+                    `;
+                });
+        }
+
+        function cleanupPreviousQuiz() {
+            // Clean up any existing quiz variables
+            if (typeof window.questions !== 'undefined') {
+                delete window.questions;
+            }
+            if (typeof window.correctAnswers !== 'undefined') {
+                delete window.correctAnswers;
+            }
+            if (typeof window.incorrectAnswers !== 'undefined') {
+                delete window.incorrectAnswers;
+            }
+            if (typeof window.unanswered !== 'undefined') {
+                delete window.unanswered;
+            }
+        }
+    </script>
+
+</body>
+</html>
