@@ -10,7 +10,7 @@ A responsive web application for practicing Multiple Choice Questions on History
 - No negative marking system
 
 ## Live Demo
-[Visit the website](https://yourusername.github.io/mcq-practice-website/)
+[Visit the website](https://princeku1456.github.io/mcq-practice-website/)
 
 ## Topics Available
 - Ancient History
