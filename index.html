@@ -26,7 +26,15 @@
             min-height: 80vh;
         }
         
-        /* Quiz-specific styles */
+        .quiz-iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Quiz-specific styles for when not using iframe */
         .question {
             margin-bottom: 20px;
         }
@@ -145,7 +153,7 @@
         <div class="container">
             <button class="btn btn-secondary back-btn" onclick="goBackToChapters()">← Back to Chapters</button>
             <div id="quiz-content">
-                <!-- Quiz content will be loaded here -->
+                <!-- Quiz iframe will be loaded here -->
             </div>
         </div>
     </section>
@@ -166,9 +174,9 @@
                 { id: 'chapter1_2', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-2)', file: 'ancient_2.html' },
                 { id: 'chapter1_3', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-3)', file: 'ancient_3.html' },
                 { id: 'chapter1_4', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-4)', file: 'ancient_4.html' },
-                { id: 'chapter', name: 'Chapter 2: "राजा, किसान और नगर आर्हंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई॰पू॰ से 600 ई॰)"', file: 'ancient_2.html' },
-                { id: 'chapter3', name: 'Chapter 3: "बंधुत्व, जाति तथा वर्ग आर्हंभिक समाज (लगभग 600 ई॰पू॰ से 600 ईस्वी)"', file: 'ancient_3.html' },
-                { id: 'chapter4', name: 'Chapter 4: "विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)"', file: 'ancient_4.html' }
+                { id: 'chapter2', name: 'Chapter 2: "राजा, किसान और नगर आर्हंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई॰पू॰ से 600 ई॰)"', file: 'ancient_5.html' },
+                { id: 'chapter3', name: 'Chapter 3: "बंधुत्व, जाति तथा वर्ग आर्हंभिक समाज (लगभग 600 ई॰पू॰ से 600 ईस्वी)"', file: 'ancient_6.html' },
+                { id: 'chapter4', name: 'Chapter 4: "विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)"', file: 'ancient_7.html' }
             ],
             medieval: [
                 { id: 'chapter1', name: 'Chapter 1: Delhi Sultanate', file: 'medieval_1.html' },
@@ -182,42 +190,49 @@
             ]
         };
 
-        // Use event delegation for quiz buttons - this will work even after DOM changes
+        // Simple and reliable event delegation
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('quiz-start-btn')) {
-                const topic = e.target.getAttribute('data-topic');
-                const chapterName = e.target.getAttribute('data-chapter-name');
-                const quizFile = e.target.getAttribute('data-quiz-file');
+            if (e.target.matches('.quiz-start-btn')) {
+                const topic = e.target.dataset.topic;
+                const chapterName = e.target.dataset.chapterName;
+                const quizFile = e.target.dataset.quizFile;
                 
-                if (topic && chapterName && quizFile) {
-                    loadQuiz(topic, chapterName, quizFile);
-                }
+                console.log('Starting quiz:', { topic, chapterName, quizFile });
+                loadQuiz(topic, chapterName, quizFile);
             }
         });
 
         function showHome() {
+            console.log('Showing home');
             document.getElementById('hero-section').style.display = 'block';
             document.getElementById('topics-section').style.display = 'none';
             document.getElementById('chapters-section').style.display = 'none';
             document.getElementById('quiz-section').style.display = 'none';
+            clearQuizContent();
         }
 
         function showTopics() {
+            console.log('Showing topics');
             document.getElementById('hero-section').style.display = 'none';
             document.getElementById('topics-section').style.display = 'block';
             document.getElementById('chapters-section').style.display = 'none';
             document.getElementById('quiz-section').style.display = 'none';
+            clearQuizContent();
         }
 
         function showChapters(topic) {
+            console.log('Showing chapters for:', topic);
             currentTopic = topic;
+            
             document.getElementById('hero-section').style.display = 'none';
             document.getElementById('topics-section').style.display = 'none';
             document.getElementById('chapters-section').style.display = 'block';
             document.getElementById('quiz-section').style.display = 'none';
+            clearQuizContent();
             
             // Update title
-            document.getElementById('chapters-title').textContent = `${topic.charAt(0).toUpperCase() + topic.slice(1)} History - Choose a Chapter`;
+            document.getElementById('chapters-title').textContent = 
+                `${topic.charAt(0).toUpperCase() + topic.slice(1)} History - Choose a Chapter`;
             
             // Load chapters
             const chaptersContainer = document.getElementById('chapters-container');
@@ -235,8 +250,9 @@
                             <div class="mt-auto">
                                 <button class="btn btn-primary w-100 quiz-start-btn" 
                                         data-topic="${topic}" 
-                                        data-chapter-name="${chapter.name}" 
-                                        data-quiz-file="${chapter.file}">
+                                        data-chapter-name="${encodeURIComponent(chapter.name)}" 
+                                        data-quiz-file="${chapter.file}"
+                                        type="button">
                                     Start Quiz
                                 </button>
                             </div>
@@ -245,9 +261,13 @@
                 `;
                 chaptersContainer.appendChild(chapterCard);
             });
+            
+            console.log(`Loaded ${chapters.length} chapters for ${topic}`);
         }
 
         function goBackToChapters() {
+            console.log('Going back to chapters');
+            clearQuizContent();
             if (currentTopic) {
                 showChapters(currentTopic);
             } else {
@@ -256,109 +276,47 @@
         }
 
         function loadQuizDirect(topic, chapterName, quizFile) {
+            console.log('Loading quiz direct');
             currentTopic = topic;
             loadQuiz(topic, chapterName, quizFile);
         }
 
         function loadQuiz(topic, chapterName, quizFile) {
-            console.log('Loading quiz:', topic, chapterName, quizFile); // Debug log
+            console.log('Loading quiz:', { topic, chapterName, quizFile });
             
             document.getElementById('hero-section').style.display = 'none';
             document.getElementById('topics-section').style.display = 'none';
             document.getElementById('chapters-section').style.display = 'none';
             document.getElementById('quiz-section').style.display = 'block';
             
+            const quizContent = document.getElementById('quiz-content');
+            
             // Show loading message
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="text-center">
+            quizContent.innerHTML = `
+                <div class="text-center mb-4">
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <p class="mt-3">Loading ${chapterName} quiz...</p>
+                    <p class="mt-3">Loading ${decodeURIComponent(chapterName)} quiz...</p>
                 </div>
             `;
             
-            // Load quiz content
+            // Load quiz in iframe for complete isolation
             setTimeout(() => {
-                loadQuizContent(topic, chapterName, quizFile);
+                quizContent.innerHTML = `
+                    <div class="quiz-wrapper">
+                        <h4 class="text-center mb-4">${decodeURIComponent(chapterName)}</h4>
+                        <iframe class="quiz-iframe" src="./${quizFile}" title="Quiz"></iframe>
+                    </div>
+                `;
+                console.log('Quiz loaded successfully in iframe');
             }, 1000);
         }
 
-        function loadQuizContent(topic, chapterName, quizFile) {
-            fetch(`./${quizFile}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    // Parse the HTML content
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    
-                    // Extract the quiz container content
-                    const quizContainer = doc.querySelector('.container .col-lg-8, .container .col-md-10');
-                    
-                    if (quizContainer) {
-                        // Clean up existing quiz scripts and variables
-                        cleanupPreviousQuiz();
-                        
-                        // Insert the quiz content
-                        document.getElementById('quiz-content').innerHTML = quizContainer.outerHTML;
-                        
-                        // Extract and execute the JavaScript from the loaded quiz
-                        const scripts = doc.querySelectorAll('script');
-                        scripts.forEach(script => {
-                            if (script.textContent.trim()) {
-                                try {
-                                    // Create a new script element and execute it
-                                    const newScript = document.createElement('script');
-                                    newScript.textContent = script.textContent;
-                                    document.body.appendChild(newScript);
-                                } catch (error) {
-                                    console.error('Error executing quiz script:', error);
-                                }
-                            }
-                        });
-                        
-                        // Initialize the loaded quiz
-                        setTimeout(() => {
-                            if (typeof window.loadQuiz === 'function') {
-                                window.loadQuiz();
-                            }
-                        }, 200);
-                        
-                    } else {
-                        throw new Error('Quiz content container not found in file');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading quiz:', error);
-                    document.getElementById('quiz-content').innerHTML = `
-                        <div class="alert alert-danger text-center">
-                            <h5>Error Loading Quiz</h5>
-                            <p>Could not load the quiz content from: <code>${quizFile}</code></p>
-                            <p class="mt-2"><small>Error: ${error.message}</small></p>
-                            <p class="mt-2"><small>Please make sure the file exists in the root directory.</small></p>
-                        </div>
-                    `;
-                });
-        }
-
-        function cleanupPreviousQuiz() {
-            // Clean up any existing quiz variables
-            if (typeof window.questions !== 'undefined') {
-                delete window.questions;
-            }
-            if (typeof window.correctAnswers !== 'undefined') {
-                delete window.correctAnswers;
-            }
-            if (typeof window.incorrectAnswers !== 'undefined') {
-                delete window.incorrectAnswers;
-            }
-            if (typeof window.unanswered !== 'undefined') {
-                delete window.unanswered;
+        function clearQuizContent() {
+            const quizContent = document.getElementById('quiz-content');
+            if (quizContent) {
+                quizContent.innerHTML = '';
             }
         }
     </script>
