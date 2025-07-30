@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Chapter-1 ("ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता") </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            cursor: pointer;
+            padding: 10px;
+        }
+        .correct {
+            background-color: #d4edda !important;
+            color: green;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            color: red;
+        }
+        .explanation {
+            color: blue;
+        }
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container center-div">
+        <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+            <h3 class="text-center mb-4">ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता</h3>
+            <div id="quiz-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions
+        const questions = [
+  {
+    "text": "हड़प्पा सभ्यता की सबसे विशिष्ट पुरावस्तु क्या है?",
+    "options": [
+      "हड़प्पाई मुहर",
+      "मृद्भांड",
+      "औज़ार",
+      "आभूषण",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 0,
+    "explanation": "हड़प्पाई मुहर इस सभ्यता की सबसे विशिष्ट पुरावस्तु है।"
+  },
+  {
+    "text": "हड़प्पाई मुहरें किस पत्थर से बनाई जाती थीं?",
+    "options": [
+      "क्वार्ट्ज़",
+      "जैस्पर",
+      "कार्नेलियन",
+      "सेलखड़ी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 3,
+    "explanation": "हड़प्पाई मुहरें सेलखड़ी नामक मुलायम पत्थर से बनाई जाती थीं।"
+  },
+  {
+    "text": "हड़प्पाई मुहरों पर सामान्यतः किसके चित्र और लिपि के चिह्न उत्कीर्णित हैं?",
+    "options": [
+      "मनुष्यों और इमारतों",
+      "देवी-देवताओं और हथियारों",
+      "जानवरों और एक ऐसी लिपि के चिह्न जिसे पढ़ा नहीं जा सका है",
+      "पेड़ों और नदियों",
+      "उपर्युक्त में से एक से अधिक"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हड़प्पाई मुहरों पर जानवरों के चित्र और एक अज्ञात लिपि के चिह्न उत्कीर्णित हैं।"
+  },
+  {
+    "text": "पुरातत्वविदों को हड़प्पा क्षेत्र में उस समय के लोगों के जीवन के विषय में जानकारी किन पुरावस्तुओं से मिलती है?",
+    "options": [
+      "उनके आवासों, मृद्भांडों, आभूषणों, औज़ारों तथा मुहरों से",
+      "केवल लिखित अभिलेखों से",
+      "केवल धार्मिक ग्रंथों से",
+      "केवल मौखिक परंपराओं से",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 0,
+    "explanation": "पुरातत्वविदों को हड़प्पा सभ्यता की जानकारी विभिन्न पुरावस्तुओं से मिलती है।"
+  },
+  {
+    "text": "\"हड़प्पा सभ्यता\" को और किस नाम से जाना जाता है?",
+    "options": [
+      "गंगा घाटी सभ्यता",
+      "सरस्वती घाटी सभ्यता",
+      "सिंधु घाटी सभ्यता",
+      "मेसोपोटामिया सभ्यता",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हड़प्पा सभ्यता को सिंधु घाटी सभ्यता के नाम से भी जाना जाता है।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता का कुल समयकाल क्या है?",
+    "options": [
+      "3000 ईसा पूर्व से 1500 ईसा पूर्व",
+      "6000 ईसा पूर्व से 1300 ईसा पूर्व",
+      "2500 ईसा पूर्व से 1750 ईसा पूर्व",
+      "1500 ईसा पूर्व से 500 ईसा पूर्व",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हड़प्पा सभ्यता का कुल समयकाल लगभग 6000 ईसा पूर्व से 1300 ईसा पूर्व तक था।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता का प्रारंभिक चरण किस समयकाल को कहा जाता है?",
+    "options": [
+      "2600 ईसा पूर्व से 1900 ईसा पूर्व",
+      "1900 ईसा पूर्व से 1300 ईसा पूर्व",
+      "6000 ईसा पूर्व से 2600 ईसा पूर्व",
+      "1300 ईसा पूर्व से 600 ईसा पूर्व",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "प्रारंभिक हड़प्पा चरण 6000 ईसा पूर्व से 2600 ईसा पूर्व तक का समयकाल है।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता का शहरी चरण, जिसे सबसे समृद्ध चरण माना जाता है, किस समयकाल में था?",
+    "options": [
+      "प्रारंभिक हड़प्पा",
+      "उत्तर हड़प्पा",
+      "परिपक्व हड़प्पा",
+      "वैदिक काल",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "परिपक्व हड़प्पा चरण सबसे समृद्ध और शहरी चरण था।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता का पतन लगभग कब शुरू हुआ था?",
+    "options": [
+      "2600 ईसा पूर्व के आसपास",
+      "1900 ईसा पूर्व के आसपास",
+      "1300 ईसा पूर्व के आसपास",
+      "6000 ईसा पूर्व के आसपास",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हड़प्पा सभ्यता का पतन लगभग 1900 ईसा पूर्व के आसपास शुरू हुआ था।"
+  },
+  {
+    "text": "'BC' शब्द का तात्पर्य क्या है?",
+    "options": [
+      "बिफोर कॉन्क्वेस्ट",
+      "बिफोर क्राइस्ट",
+      "ब्रोंज कल्चर",
+      "बेगिनिंग ऑफ क्रोनोलॉजी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BC का अर्थ 'Before Christ' है।"
+  },
+  {
+    "text": "'AD' शब्द किन दो लैटिन शब्दों से बना है?",
+    "options": [
+      "एनो डोमिनी",
+      "आल्टेर डेल्टा",
+      "एंटिक डेन्यूब",
+      "एक्वा डायरी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 0,
+    "explanation": "AD का अर्थ 'Anno Domini' है जो लैटिन भाषा के शब्द हैं।"
+  },
+  {
+    "text": "वर्तमान में 'AD' के स्थान पर किस अक्षर का प्रयोग होता है?",
+    "options": [
+      "BCE",
+      "CE",
+      "BP",
+      "BC",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "वर्तमान में AD के स्थान पर CE (Common Era) का प्रयोग होता है।"
+  },
+  {
+    "text": "'CE' अक्षर का प्रयोग किसके लिए होता है?",
+    "options": [
+      "क्रिस्टियन एरा",
+      "कल्चरल एरा",
+      "कॉमन एरा",
+      "कॉन्टेंपरेरी एरा",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CE का अर्थ 'Common Era' है।"
+  },
+  {
+    "text": "'BP' अक्षर का तात्पर्य क्या है?",
+    "options": [
+      "बिफोर पास्ट",
+      "बिफोर प्रेजेंट",
+      "ब्रोंज पीरियड",
+      "बाइनरी पॉइंट",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BP का अर्थ 'Before Present' है।"
+  },
+  {
+    "text": "विशिष्ट हड़प्पाई मिट्टी के बर्तन, ईंटें और अन्य वस्तुएँ हड़प्पा क्षेत्र के अलावा किन-किन प्रांतों से पाई जाती हैं?",
+    "options": [
+      "अफगानिस्तान, बलूचिस्तान, सिंध और पाकिस्तान के पंजाब प्रांतों से",
+      "केवल भारतीय उपमहाद्वीप से",
+      "केवल मेसोपोटामिया से",
+      "केवल ओमान से",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 0,
+    "explanation": "हड़प्पाई वस्तुएँ विस्तृत भौगोलिक क्षेत्र में पाई जाती हैं।"
+  },
+  {
+    "text": "भारत में हड़प्पा सभ्यता के साक्ष्य किन-किन राज्यों से प्राप्त हुए हैं?",
+    "options": [
+      "केवल गुजरात और महाराष्ट्र",
+      "जम्मू, पंजाब, हरियाणा, राजस्थान, उत्तर प्रदेश का पश्चिमी भाग, गुजरात और महाराष्ट्र",
+      "केवल राजस्थान और उत्तर प्रदेश",
+      "केवल जम्मू और पंजाब",
+      "उपर्युक्त में से एक से अधिक"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हड़प्पा सभ्यता के साक्ष्य भारत के कई राज्यों से मिले हैं।"
+  },
+  {
+    "text": "विकसित हड़प्पा से पहले इस क्षेत्र में कितनी संस्कृतियाँ अस्तित्व में थीं?",
+    "options": [
+      "केवल एक",
+      "कई",
+      "कोई नहीं",
+      "दो",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हड़प्पा से पहले इस क्षेत्र में कई संस्कृतियाँ मौजूद थीं।"
+  },
+  {
+    "text": "प्रारंभिक कृषक समुदायों से हड़प्पा संस्कृति के उद्भव का संकेत हाल के पुरातात्विक साक्ष्य कब से देते हैं?",
+    "options": [
+      "2600 ईसा पूर्व",
+      "1900 ईसा पूर्व",
+      "7000 ईसा पूर्व",
+      "1300 ईसा पूर्व",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हड़प्पा संस्कृति का उद्भव लगभग 7000 ईसा पूर्व से प्रारंभिक कृषक समुदायों से हुआ।"
+  },
+  {
+    "text": "शहरी चरण (परिपक्व हड़प्पा) किसका परिणाम था?",
+    "options": [
+      "अचानक आक्रमण का",
+      "व्यापारिक संबंधों में गिरावट का",
+      "प्रारंभिक हड़प्पा चरण में क्रमिक परिवर्तन और आंतरिक विकास का",
+      "प्राकृतिक आपदाओं का",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "परिपक्व हड़प्पा चरण क्रमिक विकास का परिणाम था।"
+  },
+  {
+    "text": "भारतीय उपमहाद्वीप में अब तक कितने हड़प्पाई पुरातात्विक स्थल खोजे जा चुके हैं?",
+    "options": [
+      "लगभग 500 से अधिक",
+      "लगभग 1000 से अधिक",
+      "2000 से अधिक",
+      "5000 से अधिक",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "भारतीय उपमहाद्वीप में 2000 से अधिक हड़प्पाई स्थल खोजे जा चुके हैं।"
+  },
+  {
+    "text": "अधिकांश हड़प्पाई स्थल किन नदी घाटियों के बीच स्थित पाए जाते हैं?",
+    "options": [
+      "गंगा और यमुना",
+      "नर्मदा और ताप्ती",
+      "सिंधु और सरस्वती",
+      "झेलम और चिनाब",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "अधिकांश हड़प्पाई स्थल सिंधु और सरस्वती नदी घाटियों के बीच स्थित हैं।"
+  },
+  {
+    "text": "लगभग कितने प्रतिशत बस्तियाँ सरस्वती बेसिन में हैं?",
+    "options": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "3/4",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "लगभग 2/3 बस्तियाँ सरस्वती बेसिन में स्थित हैं।"
+  },
+  {
+    "text": "पाँच प्रमुख हड़प्पाई शहरों में से कौन-सा एक शामिल नहीं है?",
+    "options": [
+      "राखीगढ़ी",
+      "मोहनजोदड़ो",
+      "हड़प्पा",
+      "कालीबंगन",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 3,
+    "explanation": "कालीबंगन पाँच प्रमुख हड़प्पाई शहरों में शामिल नहीं है।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता के निवासी भोजन के लिए किन उत्पादों का सेवन करते थे?",
+    "options": [
+      "केवल पौधों से प्राप्त उत्पाद",
+      "केवल जानवरों से प्राप्त भोजन",
+      "कई प्रकार के पेड़-पौधों से प्राप्त उत्पाद और जानवरों से प्राप्त भोजन, जिसमें मछली भी शामिल है",
+      "केवल समुद्री भोजन",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हड़प्पा निवासी विविधतापूर्ण आहार लेते थे।"
+  },
+  {
+    "text": "पुरातत्वविद् आहार संबंधी आदतों के विषय में जानकारी प्राप्त करने में कैसे सफल हो पाए हैं?",
+    "options": [
+      "लिखित अभिलेखों की खोज से",
+      "जले अनाज के दानों तथा बीजों की खोज से",
+      "धार्मिक ग्रंथों के अध्ययन से",
+      "मौखिक परंपराओं से",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "जले अनाज के दाने और बीज आहार की जानकारी के मुख्य स्रोत हैं।"
+  }
+]
+    
+
+let score = 0;
+
+        // Dynamically create quiz questions
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+                question.options.forEach((option, optIndex) => {
+                    const label = document.createElement('label');
+                    label.className = 'option btn btn-outline-secondary d-block text-start';
+                    label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+                    questionDiv.appendChild(label);
+                });
+
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation mt-2 container';
+                explanationDiv.id = `explanation${index}`;
+                explanationDiv.style.display = 'none';
+                explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+                questionDiv.appendChild(explanationDiv);
+
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+            let answered = new Array(questions.length).fill(false);
+            score = 0;
+
+            // Reset any previous coloring
+            inputs.forEach(input => {
+                input.parentElement.classList.remove('correct', 'incorrect');
+            });
+
+            // Iterate over each question
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+                // Check if the question was answered
+                if (selected) {
+                    const selectedValue = parseInt(selected.value);
+
+                    // If answer is correct, add score, else deduct points
+                    if (selectedValue === question.correctAnswer) {
+                        score += 1;
+                        selected.parentElement.classList.add('correct');
+                    } else {
+                        score -= 0;
+                        selected.parentElement.classList.add('incorrect');
+                    }
+
+                    answered[index] = true;
+                }
+
+                // Mark correct answer if question was not answered or answered incorrectly
+                if (!answered[index] || selected.value != question.correctAnswer) {
+                    options[question.correctAnswer].parentElement.classList.add('correct');
+                }
+
+                // Show explanation for each question
+                document.getElementById(`explanation${index}`).style.display = 'block';
+            });
+
+            // Display the result
+            document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+        }
+
+        // Load the quiz on page load
+        window.onload = loadQuiz;
+    </script>
+
+</body>
+</html>
