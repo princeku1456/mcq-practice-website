@@ -11,14 +11,14 @@ const subjectsConfig = {
                 name: 'Ancient History',
                 description: 'Explore questions from ancient civilizations and early history',
                 chapters: [
-                    { id: 'chapter1_1', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-1)', file: 'ancient_1.html' },
-                    { id: 'chapter1_2', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-2)', file: 'ancient_2.html' },
-                    { id: 'chapter1_3', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-3)', file: 'ancient_3.html' },
-                    { id: 'chapter1_4', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-4)', file: 'ancient_4.html' },
-                    { id: 'chapter2_1', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-1)', file: 'ancient_5.html' },
-                    { id: 'chapter2_2', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-2)', file: 'ancient_6.html' },
-                    { id: 'chapter2_3', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-3)', file: 'ancient_7.html' },
-                    { id: 'chapter2_3', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-4)', file: 'ancient_8.html' }
+                    { id: 'chapter1_1', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-1)', file: '/ancient/ancient_1.html' },
+                    { id: 'chapter1_2', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-2)', file: '/ancient/ancient_2.html' },
+                    { id: 'chapter1_3', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-3)', file: '/ancient/ancient_3.html' },
+                    { id: 'chapter1_4', name: 'Chapter 1: ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता (Part-4)', file: '/ancient/ancient_4.html' },
+                    { id: 'chapter2_1', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-1)', file: '/ancient/ancient_5.html' },
+                    { id: 'chapter2_2', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-2)', file: '/ancient/ancient_6.html' },
+                    { id: 'chapter2_3', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-3)', file: '/ancient/ancient_7.html' },
+                    { id: 'chapter2_3', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-4)', file: '/ancient/ancient_8.html' }
                 ]
             },
             medieval: {

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Chapter-1 ("ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता") </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            cursor: pointer;
+            padding: 10px;
+        }
+        .correct {
+            background-color: #d4edda !important;
+            color: green;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            color: red;
+        }
+        .explanation {
+            color: blue;
+        }
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container center-div">
+        <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+            <h3 class="text-center mb-4">MCQ Quiz - Chapter-1 ("ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता")</h3>
+            <div id="quiz-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions
+        const questions = [
+  {
+    "text": "प्राचीन वनस्पति के अध्ययन को क्या कहते हैं?",
+    "options": [
+      "पुरातत्व विज्ञान",
+      "भूविज्ञान",
+      "पुरा-वनस्पति विज्ञान",
+      "प्राणी विज्ञान",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "प्राचीन वनस्पति के अध्ययन को पुरा-वनस्पति विज्ञान कहते हैं।"
+  },
+  {
+    "text": "हड़प्पा स्थलों से मिले अनाज के दानों में क्या शामिल नहीं है?",
+    "options": [
+      "गेहूँ",
+      "जौ",
+      "दाल",
+      "मक्का",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 3,
+    "explanation": "मक्का हड़प्पा कालीन अनाज नहीं था।"
+  },
+  {
+    "text": "बाजरे के दाने गुजरात के किन स्थलों से प्राप्त हुए थे?",
+    "options": [
+      "मोहनजोदड़ो",
+      "हड़प्पा",
+      "लोथल",
+      "राखीगढ़ी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "लोथल से बाजरे के दाने प्राप्त हुए हैं।"
+  },
+  {
+    "text": "हड़प्पा स्थलों से प्राप्त पशुओं की हड्डियों में क्या शामिल नहीं है?",
+    "options": [
+      "मवेशी",
+      "भेड़",
+      "बकरी",
+      "घोड़ा",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 3,
+    "explanation": "घोड़ा हड़प्पा कालीन पशु नहीं था।"
+  },
+  {
+    "text": "पुरा-प्राणि-वैज्ञानिकों द्वारा किए गए अध्ययनों से क्या संकेत मिलता है कि हड़प्पा में कौन से जानवर पालतू थे?",
+    "options": [
+      "वराह, हिरण, घड़ियाल",
+      "मवेशी, भेड़, बकरी, भैंस तथा सूअर",
+      "मछली और पक्षी",
+      "हाथी और शेर",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हड़प्पा में मुख्यतः ये पशु पालतू थे।"
+  },
+  {
+    "text": "कालीबंगन (राजस्थान) में जुते हुए खेत का साक्ष्य किस हड़प्पा स्तर से संबंधित है?",
+    "options": [
+      "परिपक्व हड़प्पा",
+      "उत्तर हड़प्पा",
+      "प्रारंभिक हड़प्पा",
+      "नवपाषाण",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "कालीबंगन में जुते खेत का साक्ष्य प्रारंभिक हड़प्पा स्तर से मिला है।"
+  },
+  {
+    "text": "कालीबंगन में जुते हुए खेत में हल रेखाओं के दो समूह एक-दूसरे को किस कोण पर काटते हुए विद्यमान थे?",
+    "options": [
+      "समानांतर",
+      "न्यून कोण पर",
+      "समकोण पर",
+      "अधिक कोण पर",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हल रेखाएं समकोण पर एक-दूसरे को काटती थीं।"
+  },
+  {
+    "text": "हल रेखाओं के समकोण पर काटने से क्या पता चलता है?",
+    "options": [
+      "कि खेत एक ही फसल उगाने के लिए तैयार किया गया था",
+      "कि एक साथ दो अलग-अलग फसलें उगाई जाती थीं",
+      "कि यह केवल पशुओं के चारे के लिए था",
+      "कि उस क्षेत्र में सिंचाई की आवश्यकता नहीं थी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "समकोण पर काटना दो अलग फसलों का संकेत देता है।"
+  },
+  {
+    "text": "हड़प्पा सभ्यता के लोग खेती के लिए बैलों का प्रयोग करते थे, इसका अनुमान पुरातत्वविद् किस आधार पर लगाते हैं?",
+    "options": [
+      "जले अनाज के दानों के आधार पर",
+      "मुहरों पर किए गए रेखांकन तथा मृण्मूर्तियाँ, जो वृषभ के विषय में जानकारी इंगित करती हैं",
+      "केवल हल के प्रतिरूपों की खोज से",
+      "सिंचाई नहरों के अवशेषों से",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "मुहरों और मूर्तियों से बैलों के प्रयोग का प्रमाण मिलता है।"
+  },
+  {
+    "text": "मिट्टी से बने हल के प्रतिरूप कहाँ से मिले हैं?",
+    "options": [
+      "कालीबंगन और लोथल",
+      "चोलिस्तान के कई स्थलों और बनावली (हरियाणा)",
+      "राखीगढ़ी और धोलावीरा",
+      "मोहनजोदड़ो और हड़प्पा",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "हल के प्रतिरूप चोलिस्तान और बनावली से मिले हैं।"
+  },
+  {
+    "text": "अफगानिस्तान में किस हड़प्पाई स्थल से नहरों के कुछ अवशेष मिले हैं?",
+    "options": [
+      "मोहनजोदड़ो",
+      "हड़प्पा",
+      "शोरतुघई",
+      "लोथल",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "शोरतुघई से नहरों के अवशेष मिले हैं।"
+  },
+  {
+    "text": "धोलावीरा (गुजरात) में मिले जलाशयों का प्रयोग संभवतः किस लिए किया जाता था?",
+    "options": [
+      "केवल पीने के पानी के लिए",
+      "केवल पशुओं को पानी पिलाने के लिए",
+      "कृषि के लिए जल संचयन हेतु",
+      "अनुष्ठानिक स्नानों के लिए",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "धोलावीरा के जलाशय कृषि हेतु जल संचयन के लिए थे।"
+  },
+  {
+    "text": "मोहनजोदड़ो में अनाज पीसने के लिए प्रयुक्त एकमात्र साधन क्या थे?",
+    "options": [
+      "अवतल चक्की",
+      "ओखली",
+      "मूसल",
+      "सिलबट्टा",
+      "उपर्युक्त में से एक से अधिक"
+    ],
+    "correctAnswer": 0,
+    "explanation": "मोहनजोदड़ो में अवतल चक्की का प्रयोग होता था।"
+  },
+  {
+    "text": "मोहनजोदड़ो से मिली अवतल चक्कियाँ किस पत्थर से निर्मित थीं?",
+    "options": [
+      "संगमरमर",
+      "चूना पत्थर",
+      "स्थूल कठोर, कंकरीले, आग्नेय अथवा बलुआ पत्थर",
+      "स्लेट",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "अवतल चक्कियाँ कठोर पत्थरों से बनी थीं।"
+  },
+  {
+    "text": "मोहनजोदड़ो में कितनी मुख्य प्रकार की चक्कियाँ मिली हैं?",
+    "options": [
+      "एक",
+      "दो",
+      "तीन",
+      "चार",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "मोहनजोदड़ो में दो प्रकार की चक्कियाँ मिली हैं।"
+  },
+  {
+    "text": "मोहनजोदड़ो में एक प्रकार की चक्की का प्रयोग संभवतः किस लिए किया जाता था?",
+    "options": [
+      "केवल अनाज पीसने के लिए",
+      "केवल पत्थर चमकाने के लिए",
+      "सालन या तरी बनाने के लिए जड़ी-बूटियों तथा मसालों को कूटने के लिए",
+      "धातुओं को पिघलाने के लिए",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "एक प्रकार की चक्की मसालों को कूटने के लिए प्रयुक्त होती थी।"
+  },
+  {
+    "text": "मोहनजोदड़ो सबसे प्रसिद्ध पुरास्थल है, लेकिन सबसे पहले खोजा गया स्थल कौन सा था?",
+    "options": [
+      "लोथल",
+      "कालीबंगन",
+      "हड़प्पा",
+      "राखीगढ़ी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "हड़प्पा सबसे पहले खोजा गया स्थल था।"
+  },
+  {
+    "text": "मोहनजोदड़ो की बस्ती कितने भागों में विभाजित है?",
+    "options": [
+      "एक",
+      "दो",
+      "तीन",
+      "चार",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "मोहनजोदड़ो दो भागों में विभाजित है।"
+  },
+  {
+    "text": "पुरातत्वविदों ने मोहनजोदड़ो में छोटे लेकिन ऊँचाई पर बने भाग को क्या नाम दिया है?",
+    "options": [
+      "निचला शहर",
+      "दुर्ग",
+      "आवासीय क्षेत्र",
+      "व्यापारिक क्षेत्र",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ऊंचे भाग को दुर्ग कहा जाता है।"
+  },
+  {
+    "text": "दुर्ग की ऊँचाई का कारण क्या था?",
+    "options": [
+      "यह पहाड़ों पर बना था",
+      "यहाँ की संरचनाएँ कच्ची ईंटों के चबूतरों पर बनी थीं",
+      "यह बाढ़ से बचाव के लिए ऊँचा बनाया गया था",
+      "यह शत्रुओं से बचाव के लिए ऊँचा बनाया गया था",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "दुर्ग कच्ची ईंटों के चबूतरों पर बना था।"
+  },
+  {
+    "text": "मोहनजोदड़ो में निचले शहर को भी किससे घेरा गया था?",
+    "options": [
+      "खाई से",
+      "पहाड़ से",
+      "दीवार से",
+      "नदी से",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 2,
+    "explanation": "निचले शहर को भी दीवार से घेरा गया था।"
+  },
+  {
+    "text": "हड़प्पा शहरों की सबसे अनूठी विशिष्टताओं में से एक क्या थी?",
+    "options": [
+      "विस्तृत सड़कें",
+      "सुनियोजित जल निकास प्रणाली",
+      "बड़े मंदिर",
+      "ऊँची दीवारें",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "जल निकास प्रणाली हड़प्पा की विशेषता थी।"
+  },
+  {
+    "text": "मोहनजोदड़ो में सड़कों तथा गलियों को लगभग किस पद्धति में बनाया गया था?",
+    "options": [
+      "वृत्ताकार पद्धति",
+      "ग्रिड पद्धति",
+      "त्रिकोणीय पद्धति",
+      "यादृच्छिक पद्धति",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "सड़कें ग्रिड पद्धति में बनी थीं।"
+  },
+  {
+    "text": "मोहनजोदड़ो में गलियों का निर्माण पहले किया गया था या आवासों का?",
+    "options": [
+      "आवासों का",
+      "गलियों का, नालियों के साथ",
+      "दोनों एक साथ",
+      "इसका कोई प्रमाण नहीं है",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "पहले गलियों और नालियों का निर्माण हुआ।"
+  },
+  {
+    "text": "यदि घरों के गंदे पानी को गलियों की नालियों से जोड़ना था तो प्रत्येक घर की कम से कम कितनी दीवार का गली से सटा होना आवश्यक था?",
+    "options": [
+      "कोई नहीं",
+      "एक",
+      "दो",
+      "सभी",
+      "उपर्युक्त में से कोई नहीं"
+    ],
+    "correctAnswer": 1,
+    "explanation": "कम से कम एक दीवार का गली से सटा होना आवश्यक था।"
+  },
+  ]
+let score = 0;
+
+        // Dynamically create quiz questions
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+                question.options.forEach((option, optIndex) => {
+                    const label = document.createElement('label');
+                    label.className = 'option btn btn-outline-secondary d-block text-start';
+                    label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+                    questionDiv.appendChild(label);
+                });
+
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation mt-2 container';
+                explanationDiv.id = `explanation${index}`;
+                explanationDiv.style.display = 'none';
+                explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+                questionDiv.appendChild(explanationDiv);
+
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+            let answered = new Array(questions.length).fill(false);
+            score = 0;
+
+            // Reset any previous coloring
+            inputs.forEach(input => {
+                input.parentElement.classList.remove('correct', 'incorrect');
+            });
+
+            // Iterate over each question
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+                // Check if the question was answered
+                if (selected) {
+                    const selectedValue = parseInt(selected.value);
+
+                    // If answer is correct, add score, else deduct points
+                    if (selectedValue === question.correctAnswer) {
+                        score += 1;
+                        selected.parentElement.classList.add('correct');
+                    } else {
+                        score -= 0;
+                        selected.parentElement.classList.add('incorrect');
+                    }
+
+                    answered[index] = true;
+                }
+
+                // Mark correct answer if question was not answered or answered incorrectly
+                if (!answered[index] || selected.value != question.correctAnswer) {
+                    options[question.correctAnswer].parentElement.classList.add('correct');
+                }
+
+                // Show explanation for each question
+                document.getElementById(`explanation${index}`).style.display = 'block';
+            });
+
+            // Display the result
+            document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+        }
+
+        // Load the quiz on page load
+        window.onload = loadQuiz;
+    </script>
+
+</body>
+</html>
