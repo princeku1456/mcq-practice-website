@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Chapter-2 ("राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)") </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            cursor: pointer;
+            padding: 10px;
+        }
+        .correct {
+            background-color: #d4edda !important;
+            color: green;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            color: red;
+        }
+        .explanation {
+            color: blue;
+        }
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container center-div">
+        <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+            <h3 class="text-center mb-4">MCQ Quiz - Chapter-2 ("राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)") </h3>
+            <div id="quiz-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions
+        const questions = [
+          
+{
+"text": "मौर्य साम्राज्य का संस्थापक कौन था?",
+"options": [
+"अशोक",
+"बिंबिसार",
+"चंद्रगुप्त मौर्य",
+"चाणक्य",
+"समुद्रगुप्त"
+],
+"correctAnswer": 2,
+"explanation": "मौर्य साम्राज्य का संस्थापक चंद्रगुप्त मौर्य था।"
+},
+{
+"text": "चंद्रगुप्त मौर्य का शासन पश्चिमोत्तर में कहाँ तक फैला हुआ था?",
+"options": [
+"केवल भारत तक",
+"अफगानिस्तान और बलूचिस्तान तक",
+"ईरान तक",
+"मध्य एशिया तक",
+"चीन तक"
+],
+"correctAnswer": 1,
+"explanation": "चंद्रगुप्त मौर्य का साम्राज्य अफगानिस्तान और बलूचिस्तान तक फैला हुआ था।"
+},
+{
+"text": "अशोक ने किस आधुनिक क्षेत्र पर विजय प्राप्त की थी, जिसे कलिंग के नाम से जाना जाता था?",
+"options": [
+"गुजरात",
+"ओडिशा",
+"कर्नाटक",
+"आंध्र प्रदेश",
+"पश्चिम बंगाल"
+],
+"correctAnswer": 1,
+"explanation": "अशोक ने ओडिशा (प्राचीन कलिंग) पर विजय प्राप्त की थी।"
+},
+{
+"text": "यूनानी राजदूत मेगास्थनीज द्वारा लिखी गई पुस्तक का नाम क्या है, जो चंद्रगुप्त मौर्य के दरबार में आया था?",
+"options": [
+"इंडिका",
+"अर्थशास्त्र",
+"मुद्रा राक्षस",
+"राजतरंगिणी",
+"हर्षचरित"
+],
+"correctAnswer": 0,
+"explanation": "मेगास्थनीज की पुस्तक का नाम 'इंडिका' था।"
+},
+{
+"text": "कौटिल्य या चाणक्य द्वारा रचित ग्रंथ का नाम क्या है, जो चंद्रगुप्त मौर्य के मंत्री थे?",
+"options": [
+"इंडिका",
+"अर्थशास्त्र",
+"महाभाष्य",
+"रामायण",
+"अष्टाध्यायी"
+],
+"correctAnswer": 1,
+"explanation": "चाणक्य द्वारा रचित ग्रंथ का नाम 'अर्थशास्त्र' है।"
+},
+{
+"text": "अशोक के अभिलेखों को प्रायः सबसे मूल्यवान स्रोत क्यों माना जाता है?",
+"options": [
+"क्योंकि वे पत्थर और स्तंभों पर मिले हैं",
+"क्योंकि वे राजा के सीधे संदेश हैं",
+"क्योंकि वे सर्वाधिक विस्तृत विवरण देते हैं",
+"क्योंकि वे समकालीन हैं",
+"उपर्युक्त सभी कारणों से"
+],
+"correctAnswer": 4,
+"explanation": "अशोक के अभिलेख सबसे मूल्यवान स्रोत हैं क्योंकि वे समकालीन, विस्तृत, सीधे और पत्थर/स्तंभ जैसे टिकाऊ स्थलों पर लिखे गए हैं।"
+},
+{
+"text": "अशोक ने अपने अधिकारियों और प्रजा के लिए संदेश किस प्रकार की सतहों पर लिखवाए थे?",
+"options": [
+"मिट्टी के बर्तन",
+"लकड़ी के तख्ते",
+"प्राकृत पत्थरों और पॉलिश किए हुए स्तंभों",
+"धातु की चादरें",
+"ताड़ के पत्ते"
+],
+"correctAnswer": 2,
+"explanation": "अशोक ने संदेश प्राकृत में पत्थरों और चमकदार स्तंभों पर खुदवाए।"
+},
+{
+"text": "अशोक ने अपने अभिलेखों के माध्यम से किस अवधारणा का प्रचार किया?",
+"options": [
+"धर्म",
+"अहिंसा",
+"शांति",
+"न्याय",
+"दया"
+],
+"correctAnswer": 0,
+"explanation": "अशोक ने अपने अभिलेखों के माध्यम से 'धर्म' (Dhamma) का प्रचार किया।"
+},
+{
+"text": "अशोक के धर्म के सिद्धांतों में क्या शामिल था?",
+"options": [
+"केवल बड़ों के प्रति आदर",
+"केवल संन्यासियों और ब्राह्मणों के प्रति उदारता",
+"सेवक और दासों के साथ उदार व्यवहार",
+"दूसरों के धर्मों और परंपराओं का आदर",
+"उपर्युक्त सभी"
+],
+"correctAnswer": 4,
+"explanation": "अशोक के धर्म में ये सभी बातें शामिल थीं—आदर, उदारता, सहिष्णुता, आदि।"
+},
+{
+"text": "मौर्य साम्राज्य के पाँच प्रमुख राजनीतिक केंद्र कौन से थे?",
+"options": [
+"पाटलिपुत्र, उज्जैन, तक्षशिला, तोसली, सुवर्णगिरि",
+"पाटलिपुत्र, वाराणसी, कौशांबी, श्रावस्ती, मथुरा",
+"तक्षशिला, उज्जैन, सांची, सारनाथ, गया",
+"राजगीर, पाटलिपुत्र, कलिंग, गिरनार, सहसराम",
+"शिशुपालगढ़, जोगड़, सन्नति, मस्की, ब्रह्मगिरि"
+],
+"correctAnswer": 0,
+"explanation": "पाटलिपुत्र, उज्जैन, तक्षशिला, तोसली और सुवर्णगिरि मौर्य साम्राज्य के प्रमुख केंद्र थे।"
+},
+{
+"text": "तक्षशिला और उज्जैन का चयन मौर्य प्रशासन के प्रांतीय केंद्रों के रूप में क्यों किया गया था?",
+"options": [
+"वे सैन्य छावनियाँ थीं",
+"वे लंबे दूरी वाले महत्वपूर्ण व्यापार मार्ग पर स्थित थे",
+"वे धार्मिक केंद्र थे",
+"वे कृषि के लिए महत्वपूर्ण थे",
+"वे नदी किनारे बसे थे"
+],
+"correctAnswer": 1,
+"explanation": "तक्षशिला और उज्जैन महत्वपूर्ण व्यापार मार्ग पर स्थित थे।"
+},
+{
+"text": "सुवर्णगिरि (अर्थात सोने के पहाड़) का चयन प्रांतीय केंद्र के रूप में क्यों किया गया था?",
+"options": [
+"यह सैन्य नियंत्रण के लिए महत्वपूर्ण था",
+"यह व्यापार मार्ग पर स्थित था",
+"यह कर्नाटक में सोने की खदान के लिए उपयोगी था",
+"यह एक बड़ा धार्मिक स्थल था",
+"यह कृषि के लिए उपजाऊ था"
+],
+"correctAnswer": 2,
+"explanation": "सुवर्णगिरि के इलाके में सोने की खदानें थीं, इस कारण यह केंद्र था।"
+},
+{
+"text": "मेगास्थनीज ने सैनिक गतिविधियों के संचालन के लिए कितनी उपसमितियों का उल्लेख किया है?",
+"options": [
+"तीन",
+"चार",
+"पाँच",
+"छह",
+"सात"
+],
+"correctAnswer": 3,
+"explanation": "मेगास्थनीज ने सेना के लिए छह उपसमितियों का विवरण दिया है।"
+},
+{
+"text": "मौर्य साम्राज्य में धम्म का प्रचार करने के लिए नियुक्त विशेष अधिकारियों को क्या कहा जाता था?",
+"options": [
+"धम्म-महामात्र",
+"धम्म-अमात्य",
+"धम्म-आचार्य",
+"धम्म-पुरोहित",
+"धम्म-प्रसारक"
+],
+"correctAnswer": 0,
+"explanation": "धम्म के प्रचार के लिए 'धम्म-महामात्र' नामक अधिकारी नियुक्त किए जाते थे।"
+},
+{
+"text": "उन्नीसवीं और बीसवीं सदी के आरंभिक भारतीय इतिहासकारों के लिए मौर्य साम्राज्य क्यों महत्वपूर्ण था?",
+"options": [
+"क्योंकि यह भारत का सबसे पुराना साम्राज्य था",
+"क्योंकि यह ब्रिटिश साम्राज्य के अधीन एक औपनिवेशिक देश था",
+"क्योंकि यह प्राचीन भारत में एक ऐसे साम्राज्य की संभावना थी जो शक्तिशाली और प्रेरणादायक था",
+"क्योंकि इससे भारतीय कला का उत्कृष्ट प्रमाण मिलता था",
+"क्योंकि अशोक एक बहुत शक्तिशाली और परिश्रमी शासक था"
+],
+"correctAnswer": 2,
+"explanation": "इतिहासकारों के लिए मौर्य साम्राज्य प्रेरणादायक और शक्तिशाली साम्राज्य की एक मिसाल था।"
+},
+{
+"text": "मेगास्थनीज के विवरण के अनुसार, सम्राट के कुछ महान अधिकारी नदियों की देख-रेख और किस कार्य में संलग्न थे?",
+"options": [
+"भूमि मापन का काम",
+"सड़कें बनाना",
+"भवन निर्माण",
+"खदानों का प्रबंधन",
+"व्यापार नियंत्रण"
+],
+"correctAnswer": 0,
+"explanation": "मेगास्थनीज के अनुसार, महाराज के अधिकारी नदी तथा भूमि मापन आदि कार्यों में लगे रहते थे।"
+},
+{
+"text": "मौर्य साम्राज्य कुल कितने समय तक चला था?",
+"options": [
+"50 वर्ष",
+"100 वर्ष",
+"150 वर्ष",
+"200 वर्ष",
+"250 वर्ष"
+],
+"correctAnswer": 2,
+"explanation": "मौर्य साम्राज्य लगभग 150 वर्ष तक चला।"
+},
+{
+"text": "उपमहाद्वीप के दक्कन और उससे दक्षिण के क्षेत्रों में किन सरदारियों का उदय हुआ, जिन्हें 'तमिलकम' कहा जाता था?",
+"options": [
+"चोल, चेर और पांड्य",
+"सातवाहन और शक",
+"गुप्त और वाकाटक",
+"कुषाण और पल्लव",
+"चालुक्य और राष्ट्रकूट"
+],
+"correctAnswer": 0,
+"explanation": "दक्षिण भारत की चोल, चेर और पांड्य सरदारियों को तमिलकम कहा जाता था।"
+},
+{
+"text": "सरदार की पद की क्या विशेषताएँ थीं?",
+"options": [
+"उसका पद हमेशा वंशानुगत होता था",
+"उसके समर्थक केवल उसके परिवार के सदस्य होते थे",
+"वह कर वसूलता था",
+"सरदारियों में सामान्यतः कोई स्थायी सेना या अधिकारी नहीं होते थे",
+"वह केवल धार्मिक अनुष्ठानों का संचालन करता था"
+],
+"correctAnswer": 3,
+"explanation": "पुराने समय में सरदारियों में सामान्यतः कोई स्थायी सेना या अधिकारी नहीं होते थे।"
+},
+{
+"text": "प्राचीन तमिल संगम ग्रंथों में किनका विवरण मिलता है?",
+"options": [
+"राजाओं का",
+"व्यापारियों का",
+"सरदारों का",
+"किसानों का",
+"धार्मिक नेताओं का"
+],
+"correctAnswer": 2,
+"explanation": "प्राचीन तमिल संगम ग्रंथों में सरदारों का विस्तृत विवरण मिलता है।"
+},
+{
+    "text": "मध्य और पश्चिमी भारत के क्षेत्रों पर शासन करने वाले सातवाहन और उपमहाद्वीप के पश्चिमोत्तर और पश्चिम में शासन करने वाले शक शासक अपना राजस्व कैसे जुटाते थे?",
+    "options": [
+      "कृषि से",
+      "पशुपालन से",
+      "लंबी दूरी के व्यापार से",
+      "कर संग्रह से",
+      "भूमि अनुदान से"
+    ],
+    "correctAnswer": 3,
+    "explanation": "सातवाहन और शक शासक मुख्यतः कर संग्रह के माध्यम से अपना राजस्व जुटाते थे।"
+  },
+  {
+    "text": "कुषाण शासकों ने अपने आप को किस उपाधि से प्रस्तुत किया था?",
+    "options": [
+      "महाराजधिराज",
+      "परमेश्वर",
+      "देवपुत्र",
+      "चक्रवर्ती",
+      "पृथ्वीराज"
+    ],
+    "correctAnswer": 2,
+    "explanation": "कुषाण शासक अपने आप को 'देवपुत्र' की उपाधि से प्रस्तुत करते थे।"
+  },
+  {
+    "text": "कुषाण शासकों ने स्वयं को 'देवपुत्र' की उपाधि क्यों दी थी?",
+    "options": [
+      "क्योंकि वे चीनी शासकों से प्रेरित थे जो स्वयं को 'स्वर्गपुत्र' कहते थे",
+      "क्योंकि वे देवताओं के वंशज थे",
+      "क्योंकि उन्हें जनता द्वारा देवता माना जाता था",
+      "क्योंकि वे बहुत शक्तिशाली थे",
+      "क्योंकि उन्होंने बड़े पैमाने पर मंदिरों का निर्माण कराया था"
+    ],
+    "correctAnswer": 0,
+    "explanation": "'देवपुत्र' उपाधि उन्हें चीनी शासकों से मिली प्रेरणा के कारण मिली, जो 'स्वर्गपुत्र' कहलाते थे।"
+  },
+  {
+    "text": "चौथी शताब्दी ईसवी में गुप्त साम्राज्य सहित कई बड़े साम्राज्यों के साक्ष्य मिलते हैं। ये साम्राज्य किन पर निर्भर थे?",
+    "options": [
+      "किसानों पर",
+      "व्यापारियों पर",
+      "सामंतों पर",
+      "सेना पर",
+      "ब्राह्मणों पर"
+    ],
+    "correctAnswer": 2,
+    "explanation": "गुप्त और अन्य साम्राज्य सामंतों पर निर्भर थे।"
+  },
+  {
+    "text": "गुप्त शासकों का इतिहास किनकी सहायता से लिखा गया है?",
+    "options": [
+      "साहित्य, सिक्कों और अभिलेखों",
+      "केवल साहित्यिक ग्रंथों",
+      "केवल सिक्कों",
+      "केवल अभिलेखों",
+      "केवल पुरातात्विक साक्ष्य"
+    ],
+    "correctAnswer": 0,
+    "explanation": "गुप्त शासकों का इतिहास साहित्य, सिक्कों और अभिलेखों के माध्यम से लिखा गया है।"
+  }
+]
+
+  let score = 0;
+
+        // Dynamically create quiz questions
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+                question.options.forEach((option, optIndex) => {
+                    const label = document.createElement('label');
+                    label.className = 'option btn btn-outline-secondary d-block text-start';
+                    label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+                    questionDiv.appendChild(label);
+                });
+
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation mt-2 container';
+                explanationDiv.id = `explanation${index}`;
+                explanationDiv.style.display = 'none';
+                explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+                questionDiv.appendChild(explanationDiv);
+
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+            let answered = new Array(questions.length).fill(false);
+            score = 0;
+
+            // Reset any previous coloring
+            inputs.forEach(input => {
+                input.parentElement.classList.remove('correct', 'incorrect');
+            });
+
+            // Iterate over each question
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+                // Check if the question was answered
+                if (selected) {
+                    const selectedValue = parseInt(selected.value);
+
+                    // If answer is correct, add score, else deduct points
+                    if (selectedValue === question.correctAnswer) {
+                        score += 1;
+                        selected.parentElement.classList.add('correct');
+                    } else {
+                        score -= 0;
+                        selected.parentElement.classList.add('incorrect');
+                    }
+
+                    answered[index] = true;
+                }
+
+                // Mark correct answer if question was not answered or answered incorrectly
+                if (!answered[index] || selected.value != question.correctAnswer) {
+                    options[question.correctAnswer].parentElement.classList.add('correct');
+                }
+
+                // Show explanation for each question
+                document.getElementById(`explanation${index}`).style.display = 'block';
+            });
+
+            // Display the result
+            document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+        }
+
+        // Load the quiz on page load
+        window.onload = loadQuiz;
+    </script>
+
+</body>
+</html>

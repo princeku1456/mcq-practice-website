@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Chapter-2 ("राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)") </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+        .option {
+            cursor: pointer;
+            padding: 10px;
+        }
+        .correct {
+            background-color: #d4edda !important;
+            color: green;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            color: red;
+        }
+        .explanation {
+            color: blue;
+        }
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container center-div">
+        <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+            <h3 class="text-center mb-4">MCQ Quiz - Chapter-2 ("राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)") </h3>
+            <div id="quiz-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions
+        const questions = [
+{
+"text": "उपमहाद्वीप के विभिन्न भागों में कई प्रकार के विकास किस सभ्यता के बाद लगभग डेढ़ हज़ार वर्षों के लंबे अंतराल में हुए?",
+"options": [
+"हड़प्पा सभ्यता",
+"वैदिक सभ्यता",
+"मौर्य सभ्यता",
+"गुप्त सभ्यता",
+"महाजनपद सभ्यता"
+],
+"correctAnswer": 0,
+"explanation": "हड़प्पा सभ्यता के पतन के बाद लगभग डेढ़ हज़ार वर्षों तक उपमहाद्वीप में कई प्रकार के विकास हुए।"
+},
+{
+"text": "ऋग्वेद का लेखन किस नदी और उसकी सहायक नदियों के किनारे रहने वाले लोगों द्वारा किया गया था?",
+"options": [
+"गंगा",
+"यमुना",
+"सरस्वती",
+"सिंधु",
+"गोदावरी"
+],
+"correctAnswer": 3,
+"explanation": "ऋग्वेद का लेखन सिंधु नदी और उसकी सहायक नदियों के किनारे बसने वाले लोगों ने किया था।"
+},
+{
+"text": "ईसा पूर्व पहली सहस्राब्दि के दौरान मध्य और दक्षिण भारत में शवों के अंतिम संस्कार के कौन से नए तरीके सामने आए?",
+"options": [
+"अग्निदाह",
+"जल समाधि",
+"महापाषाण (मेगालिथ)",
+"खुले में छोड़ना",
+"समाधि (टीले)"
+],
+"correctAnswer": 2,
+"explanation": "इस काल में महापाषाण (मेगालिथ) कब्रों द्वारा शवों का अंतिम संस्कार किया जाने लगा।"
+},
+{
+"text": "महापाषाण कब्रों के साथ कौन से उपकरण और हथियार दफनाए जाने के प्रमाण मिले हैं?",
+"options": [
+"पत्थर के औजार",
+"कांस्य उपकरण",
+"लोहे से बने उपकरण और हथियार",
+"लकड़ी के औजार",
+"तांबे के उपकरण"
+],
+"correctAnswer": 2,
+"explanation": "महापाषाण कब्रों में लोहे के बने उपकरण और हथियार दफनाने के प्रमाण मिले हैं।"
+},
+{
+"text": "लगभग छठी शताब्दी ईसा पूर्व से प्राप्त नए परिवर्तनों में सबसे मुखर विकास क्या था?",
+"options": [
+"कृषि का विकास",
+"व्यापार मार्गों का विस्तार",
+"आरंभिक राज्यों, साम्राज्यों और रजवाड़ों का विकास",
+"धार्मिक ग्रंथों का लेखन",
+"सिक्कों का आविष्कार"
+],
+"correctAnswer": 2,
+"explanation": "इस काल में सबसे प्रमुख विकास आरंभिक राज्यों, साम्राज्यों और रजवाड़ों का विकास था।"
+},
+{
+"text": "इतिहासकारों द्वारा आरंभिक भारतीय इतिहास का आकलन करने के लिए अध्ययन किए जाने वाले विभिन्न प्रकार के स्रोतों में क्या शामिल है?",
+"options": [
+"अभिलेख, ग्रंथ, सिक्के और चित्र",
+"केवल साहित्यिक ग्रंथ",
+"केवल पुरातात्विक साक्ष्य",
+"केवल सिक्के और चित्र",
+"केवल विदेशी यात्रियों के विवरण"
+],
+"correctAnswer": 0,
+"explanation": "अभिलेख, ग्रंथ, सिक्के और चित्र, ये सभी स्रोत इतिहासकारों द्वारा अध्ययन किए जाते हैं।"
+},
+{
+"text": "अभिलेखों के अध्ययन को क्या कहा जाता है?",
+"options": [
+"मुद्राशास्त्र",
+"पुरावनस्पति विज्ञान",
+"अभिलेखशास्त्र",
+"पुरालेखशास्त्र",
+"नृविज्ञान"
+],
+"correctAnswer": 2,
+"explanation": "अभिलेखों के अध्ययन को अभिलेखशास्त्र (Epigraphy) कहा जाता है।"
+},
+{
+"text": "जेम्स प्रिंसेप ने ब्राह्मी और खरोष्ठी लिपियों का अर्थ कब निकाला?",
+"options": [
+"1800 के दशक में",
+"1810 के दशक में",
+"1820 के दशक में",
+"1830 के दशक में",
+"1840 के दशक में"
+],
+"correctAnswer": 3,
+"explanation": "जेम्स प्रिंसेप ने 1830 के दशक में ब्राह्मी और खरोष्ठी लिपियों का अर्थ निकाला।"
+},
+{
+"text": "अधिकांश आरंभिक अभिलेखों और सिक्कों पर किस नाम का उल्लेख मिलता है, जिसका अर्थ 'मनोहर मुखाकृति वाले राजा' है?",
+"options": [
+"अशोक",
+"चंद्रगुप्त",
+"प्रियदर्शी",
+"देवनामपिय",
+"कनिष्क"
+],
+"correctAnswer": 2,
+"explanation": "‘प्रियदर्शी’ का अर्थ है 'मनोहर मुखाकृति वाला राजा', जो अधिकांश आरंभिक अभिलेखों पर मिलता है।"
+},
+{
+"text": "बौद्ध ग्रंथों के अनुसार, सर्वाधिक प्रसिद्ध शासकों में से एक कौन था, जिसका नाम कुछ अभिलेखों पर भी लिखा है?",
+"options": [
+"चंद्रगुप्त मौर्य",
+"बिंदुसार",
+"अशोक",
+"महापद्म नंद",
+"समुद्रगुप्त"
+],
+"correctAnswer": 2,
+"explanation": "अशोक बौद्ध ग्रंथों के अनुसार सबसे प्रसिद्ध शासकों में से एक थे, जिनका नाम अभिलेखों पर भी मिलता है।"
+},
+{
+"text": "आरंभिक भारतीय इतिहास में किस शताब्दी ईसा पूर्व को एक महत्वपूर्ण परिवर्तनकारी काल माना जाता है?",
+"options": [
+"चौथी शताब्दी ईसा पूर्व",
+"पाँचवीं शताब्दी ईसा पूर्व",
+"छठी शताब्दी ईसा पूर्व",
+"सातवीं शताब्दी ईसा पूर्व",
+"आठवीं शताब्दी ईसा पूर्व"
+],
+"correctAnswer": 2,
+"explanation": "छठी शताब्दी ईसा पूर्व को आरंभिक भारतीय इतिहास में महत्वपूर्ण परिवर्तनकारी काल के रूप में जाना जाता है।"
+},
+{
+"text": "आरंभिक बौद्ध और जैन ग्रंथों में कितने राज्यों का उल्लेख 'महाजनपद' के नाम से मिलता है?",
+"options": [
+"आठ",
+"दस",
+"बारह",
+"सोलह",
+"बीस"
+],
+"correctAnswer": 3,
+"explanation": "इन ग्रंथों में सोलह महाजनपदों का उल्लेख मिलता है।"
+},
+{
+"text": "महाजनपदों में से किनके नाम अक्सर उन ग्रंथों में मिलते हैं, जिससे वे सर्वाधिक महत्वपूर्ण महाजनपद प्रतीत होते हैं?",
+"options": [
+"वज्जि, मगध, कोसल, कुरु, पांचाल, गांधार और अवंति",
+"काशी, चेदि, मत्स्य, अंग, वंग और कौशल",
+"अश्मक, वत्स, शूरसेन, काशी, अंग और मल्ल",
+"वज्जि, मल्ल, चेदि, कुरु और गांधार",
+"पांचाल, मत्स्य, अवंति, वंग और कोसल"
+],
+"correctAnswer": 0,
+"explanation": "वज्जि, मगध, कोसल, कुरु, पांचाल, गांधार और अवंति, ये प्रमुख महाजनपद थे जिनका उल्लेख प्रमुख रूप से मिलता है।"
+},
+{
+"text": "गण और संघ के नाम से प्रसिद्ध राज्यों में शासन कौन करता था?",
+"options": [
+"केवल एक राजा",
+"पुरुषों का एक समूह",
+"महिलाओं का एक समूह",
+"सैनिक कमांडर",
+"पुरोहित वर्ग"
+],
+"correctAnswer": 1,
+"explanation": "गण और संघ में शासन पुरुषों के एक समूह द्वारा किया जाता था।"
+},
+{
+"text": "कौन से दो प्रसिद्ध धार्मिक नेता गणों से संबंधित थे?",
+"options": [
+"भगवान महावीर और भगवान बुद्ध",
+"गौतम बुद्ध और चाणक्य",
+"महावीर स्वामी और भद्रबाहु",
+"पार्श्वनाथ और ऋषभदेव",
+"पतंजलि और वेदव्यास"
+],
+"correctAnswer": 0,
+"explanation": "भगवान महावीर और भगवान बुद्ध दोनों ही गण या संघ राज्यों से संबंधित थे।"
+},
+{
+"text": "प्रत्येक महाजनपद की राजधानी किस प्रकार की होती थी?",
+"options": [
+"खुले मैदान में",
+"पहाड़ियों के बीच",
+"अक्सर किलों से घिरी हुई",
+"नदियों के किनारे",
+"घने जंगलों में"
+],
+"correctAnswer": 2,
+"explanation": "प्रत्येक महाजनपद की राजधानी अक्सर मजबूत किलों से घिरी होती थी।"
+},
+{
+"text": "संस्कृत में 'धर्मशास्त्र' नामक ग्रंथों की रचना ब्राह्मणों द्वारा कब से शुरू की गई थी?",
+"options": [
+"चौथी शताब्दी ईसा पूर्व",
+"पाँचवीं शताब्दी ईसा पूर्व",
+"छठी शताब्दी ईसा पूर्व",
+"सातवीं शताब्दी ईसा पूर्व",
+"आठवीं शताब्दी ईसा पूर्व"
+],
+"correctAnswer": 2,
+"explanation": "धर्मशास्त्रों की रचना ब्राह्मणों द्वारा छठी शताब्दी ईसा पूर्व से शुरू हो गई थी।"
+},
+{
+"text": "धर्मशास्त्रों के अनुसार, शासकों को किस वर्ण से संबंधित होना अपेक्षित था?",
+"options": [
+"ब्राह्मण",
+"क्षत्रिय",
+"वैश्य",
+"शूद्र",
+"कोई भी वर्ण"
+],
+"correctAnswer": 1,
+"explanation": "धर्मशास्त्रों के अनुसार, शासकों को क्षत्रिय वर्ण से होना अपेक्षित था।"
+},
+{
+"text": "शासकों का कार्य क्या माना जाता था?",
+"options": [
+"केवल धार्मिक अनुष्ठान करना",
+"किसानों, व्यापारियों और शिल्पकारों से कर तथा भेंट वसूलना",
+"केवल सेना का संचालन करना",
+"पड़ोसी राज्यों से धन एकत्र करना",
+"धर्म का प्रचार करना"
+],
+"correctAnswer": 1,
+"explanation": "शासकों का मुख्य कार्य किसानों, व्यापारियों और शिल्पकारों से कर और भेंट वसूलना माना जाता था।"
+},
+{
+"text": "उस शासन प्रणाली को क्या कहते हैं जहाँ सत्ता पुरुषों के एक समूह के हाथ में होती है?",
+"options": [
+"राजतंत्र",
+"गणतंत्र",
+"कुलीनतंत्र (ओलिगार्की)",
+"लोकतंत्र",
+"सामंतशाही"
+],
+"correctAnswer": 2,
+"explanation": "ऐसी शासन व्यवस्था जिसमें सत्ता पुरुषों के एक समूह के हाथ में हो, उसे कुलीनतंत्र (Oligarchy) कहते हैं।"
+},
+{
+"text": "छठी से चौथी शताब्दी ईसा पूर्व में सबसे शक्तिशाली महाजनपद कौन सा बन गया था?",
+"options": [
+"कोसल",
+"अवंति",
+"वज्जि",
+"मगध",
+"कुरु"
+],
+"correctAnswer": 3,
+"explanation": "मगध छठी से चौथी शताब्दी ईसा पूर्व में सबसे शक्तिशाली महाजनपद बना।"
+},
+{
+"text": "मगध के शक्तिशाली होने का एक प्रमुख कारण क्या था, जो आधुनिक झारखंड में आसानी से उपलब्ध था?",
+"options": [
+"कृषि की उपज",
+"लोहे की खदानें",
+"उपजाऊ मिट्टी",
+"हाथियों की उपलब्धता",
+"व्यापार मार्ग"
+],
+"correctAnswer": 1,
+"explanation": "मगध की शक्ति का एक प्रमुख कारण वहाँ के निकटवर्ती झारखंड क्षेत्र में लोहे की खदानों की उपलब्धता थी।"
+},
+{
+"text": "मगध के आरंभिक बौद्ध और जैन लेखकों ने उसकी महत्ता का कारण क्या बताया है?",
+"options": [
+"कृषि उपज",
+"लोहे की उपलब्धता",
+"जंगली हाथियों की उपलब्धता",
+"गंगा और उसकी उपनदियों से सस्ता आवागमन",
+"बिंबिसार, अजातशत्रु और महापद्म नंद जैसे महत्वाकांक्षी शासकों की नीतियाँ"
+],
+"correctAnswer": 3,
+"explanation": "गंगा और उसकी उपनदियों का सस्ता जल परिवहन मगध की महत्ता का एक महत्वपूर्ण कारण बताया गया है।"
+},
+{
+"text": "आरंभ में मगध की राजधानी कहाँ थी, जिसका प्राकृत नाम 'राजगह' है?",
+"options": [
+"पाटलिपुत्र",
+"वैशाली",
+"श्रावस्ती",
+"राजगीर",
+"चम्पा"
+],
+"correctAnswer": 3,
+"explanation": "मगध की प्रारंभिक राजधानी राजगह (अब राजगीर) थी।"
+},
+{
+"text": "चौथी शताब्दी ईसा पूर्व में मगध की राजधानी राजगह से पाटलिपुत्र (अब पटना) क्यों स्थानांतरित की गई?",
+"options": [
+"सुरक्षा कारणों से",
+"राजा की सुविधा के लिए",
+"गंगा के रास्ते आवागमन के मार्ग पर इसकी महत्वपूर्ण अवस्थिति के कारण",
+"कृषि विस्तार के लिए",
+"नए नगर का विकास करने के लिए"
+],
+"correctAnswer": 2,
+"explanation": "पाटलिपुत्र गंगा के नदीमार्ग पर स्थित था, जो प्रशासन एवं संचार के लिए अत्यंत उपयुक्त था।"
+}
+]
+
+  let score = 0;
+
+        // Dynamically create quiz questions
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+                question.options.forEach((option, optIndex) => {
+                    const label = document.createElement('label');
+                    label.className = 'option btn btn-outline-secondary d-block text-start';
+                    label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+                    questionDiv.appendChild(label);
+                });
+
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation mt-2 container';
+                explanationDiv.id = `explanation${index}`;
+                explanationDiv.style.display = 'none';
+                explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+                questionDiv.appendChild(explanationDiv);
+
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+            let answered = new Array(questions.length).fill(false);
+            score = 0;
+
+            // Reset any previous coloring
+            inputs.forEach(input => {
+                input.parentElement.classList.remove('correct', 'incorrect');
+            });
+
+            // Iterate over each question
+            questions.forEach((question, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+                // Check if the question was answered
+                if (selected) {
+                    const selectedValue = parseInt(selected.value);
+
+                    // If answer is correct, add score, else deduct points
+                    if (selectedValue === question.correctAnswer) {
+                        score += 1;
+                        selected.parentElement.classList.add('correct');
+                    } else {
+                        score -= 0;
+                        selected.parentElement.classList.add('incorrect');
+                    }
+
+                    answered[index] = true;
+                }
+
+                // Mark correct answer if question was not answered or answered incorrectly
+                if (!answered[index] || selected.value != question.correctAnswer) {
+                    options[question.correctAnswer].parentElement.classList.add('correct');
+                }
+
+                // Show explanation for each question
+                document.getElementById(`explanation${index}`).style.display = 'block';
+            });
+
+            // Display the result
+            document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+        }
+
+        // Load the quiz on page load
+        window.onload = loadQuiz;
+    </script>
+
+</body>
+</html>
