@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz - Chapter-3 ("बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600 ईस्वी)) </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .correct {
+      background-color: #d4edda !important;
+      color: green;
+    }
+
+    .incorrect {
+      background-color: #f8d7da !important;
+      color: red;
+    }
+
+    .explanation {
+      color: blue;
+    }
+
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container center-div">
+    <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+      <h3 class="text-center mb-4">MCQ Quiz - Chapter-3 ("बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600
+        ईस्वी)) </h3>
+      <div id="quiz-container">
+        <!-- Questions will be inserted here by JavaScript -->
+      </div>
+
+      <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+      <div id="result" class="mt-4"></div>
+    </div>
+  </div>
+
+  <script>
+    // Quiz questions
+    const questions = [{
+        "text": "'बहिर्विवाह' किसे कहते हैं?",
+        "options": ["समूह के भीतर विवाह", "एक पुरुष की अनेक पत्नियाँ", "गोत्र से बाहर विवाह करना",
+          "एक स्त्री के अनेक पति"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'बहिर्विवाह' का अर्थ है विवाह गोत्र या जाति के बाहर; यह कुल, गोत्र या जाति के बाहर विवाह की प्रथा है।"
+      },
+      {
+        "text": "'बहुपत्नी प्रथा' क्या है?",
+        "options": ["एक स्त्री के अनेक पति होने की पद्धति", "गोत्र से बाहर विवाह करना",
+          "एक पुरुष की अनेक पत्नियाँ होने की सामाजिक परिपाटी", "समूह के भीतर विवाह"
+        ],
+        "correctAnswer": 2,
+        "explanation": "बहुपत्नी प्रथा में एक पुरुष की अनेक पत्नियाँ होती हैं; यह बहुविवाह का एक रूप है।"
+      },
+      {
+        "text": "धर्मसूत्रों और धर्मशास्त्रों में लगभग किस ई.पू. से किस ई.सवी के बीच आचार संहिताएँ संकलित की गईं?",
+        "options": ["1000 ई.पू. से 500 ई.पू.", "500 ई.पू. से 500 ई.सवी", "200 ई.पू. से 200 ई.सवी",
+          "500 ई.पू. से 200 ई.सवी"
+        ],
+        "correctAnswer": 1,
+        "explanation": "धर्मसूत्र और धर्मशास्त्रों की रचनाएँ लगभग 500 ई.पू. से 500 ई.सवी के बीच मानी जाती हैं।[3][4][6]"
+      },
+      {
+        "text": "धर्मसूत्रों और धर्मशास्त्रों में सबसे महत्वपूर्ण ग्रंथ कौन-सा था, जिसका संकलन लगभग 200 ई.पू. से 200 ई.सवी के बीच हुआ?",
+        "options": ["ऋग्वेद", "महाभारत", "मनुस्मृति", "जातक कथाएँ"],
+        "correctAnswer": 2,
+        "explanation": "मनुस्मृति को धर्मशास्त्रों में सबसे महत्वपूर्ण ग्रंथ माना जाता है।"
+      },
+      {
+        "text": "ब्राह्मण लेखकों का यह मानना कि उनका दृष्टिकोण सार्वभौमिक है, क्यों वास्तविक नहीं था?",
+        "options": [
+          "ब्राह्मणों का प्रभाव केवल कुछ क्षेत्रों तक सीमित था",
+          "उपमहाद्वीप में फैली क्षेत्रीय विभिन्नता और संचार की बाधाएँ",
+          "शासकों ने ब्राह्मणों के नियमों को नहीं माना",
+          "अन्य धर्मों ने इन नियमों को पूरी तरह से स्वीकार कर लिया था"
+        ],
+        "correctAnswer": 1,
+        "explanation": "क्षेत्रीय विविधता और सीमित संचार के कारण नियम सार्वभौमिक नहीं हो सके।"
+      },
+      {
+        "text": "धर्मसूत्र और धर्मशास्त्र विवाह के कितने प्रकारों को स्वीकृति देते हैं?",
+        "options": ["चार", "छह", "आठ", "सोलह"],
+        "correctAnswer": 2,
+        "explanation": "भारतीय ग्रंथों में विवाह के आठ प्रकारों का उल्लेख मिलता है।"
+      },
+      {
+        "text": "ब्राह्मणों द्वारा गोत्रों में वर्गीकृत करने की पद्धति लगभग कब प्रचलन में आई?",
+        "options": ["2000 ई.पू.", "1000 ई.पू. के बाद", "500 ई.पू. से पहले", "200 ई.सवी के बाद"],
+        "correctAnswer": 1,
+        "explanation": "गोत्र आधारित वर्गीकरण का चलन 1000 ई.पू. के बाद शुरू हुआ।"
+      },
+      {
+        "text": "गोत्रों के संबंध में दो महत्वपूर्ण नियम क्या थे?",
+        "options": [
+          "विवाह के बाद स्त्री को पिता का गोत्र मानना और एक ही गोत्र में विवाह करना",
+          "विवाह के बाद स्त्री को पति का गोत्र मानना और एक ही गोत्र के सदस्यों में विवाह संबंध न रखना",
+          "गोत्र का नाम माता के नाम पर आधारित होना",
+          "गोत्र का निर्धारण जन्म के बजाय व्यवसाय से होना"
+        ],
+        "correctAnswer": 1,
+        "explanation": "विवाह के बाद पत्नी पति का गोत्र अपनाती है, और शादी अपने गोत्र में नहीं हो सकती।"
+      },
+      {
+        "text": "सातवाहन शासकों का शासन पश्चिमी भारत और दक्कन के कुछ भागों पर लगभग कब से कब तक था?",
+        "options": [
+          "तीसरी शताब्दी ई.पू. से पहली शताब्दी ई.सवी",
+          "दूसरी शताब्दी ई.पू. से दूसरी शताब्दी ई.सवी तक",
+          "चौथी शताब्दी ई.सवी से छठी शताब्दी ई.सवी",
+          "पहली शताब्दी ई.सवी से तीसरी शताब्दी ई.सवी"
+        ],
+        "correctAnswer": 1,
+        "explanation": "सातवाहन साम्राज्य लगभग दूसरी शताब्दी ई.पू. से दूसरी शताब्दी ई.सवी तक रहा।"
+      },
+      {
+        "text": "सातवाहन राजाओं के नामों में 'पुत्त' शब्द का क्या अर्थ है?",
+        "options": ["राजा", "पुत्र", "गोत्र", "देवता"],
+        "correctAnswer": 1,
+        "explanation": "'पुत्त' का अर्थ 'पुत्र' होता है; यह नामों में मातृनाम को दर्शाता है।"
+      },
+      {
+        "text": "सातवाहन रानियों के नाम के विश्लेषण क्या इंगित करता है?",
+        "options": [
+          "उन्होंने पति कुल का गोत्र ग्रहण किया",
+          "विवाह के बाद भी पिता का गोत्र रखा",
+          "नया गोत्र अपनाया",
+          "केवल पति के नाम पर आधारित रहे"
+        ],
+        "correctAnswer": 1,
+        "explanation": "कुछ सातवाहन रानियाँ विवाह के बाद भी पिता का गोत्र रखती थीं।"
+      },
+      {
+        "text": "कुछ सातवाहन रानियाँ एक ही गोत्र की थीं, यह किस प्रथा के विरुद्ध था?",
+        "options": ["अंतर्विवाह पद्धति", "बहुपत्नी प्रथा", "बहिर्विवाह पद्धति", "बहुपति प्रथा"],
+        "correctAnswer": 2,
+        "explanation": "गोत्र से बाहर विवाह (बहिर्विवाह) की अपेक्षा थी, यह उसका उल्लंघन था।"
+      },
+      {
+        "text": "सातवाहन राजाओं को मातृनाम से चिह्नित किया जाने के बावजूद, सिंहासन का उत्तराधिकार किस प्रकार का था?",
+        "options": [
+          "मातृवंशिक",
+          "पितृवंशिक",
+          "चुनाव द्वारा",
+          "मातृ-पितृ दोनों का मिश्रण"
+        ],
+        "correctAnswer": 1,
+        "explanation": "उत्तराधिकार में वंश पितृवंशिक था; राजसिंहासन पिता/पुत्र में जाता था।"
+      },
+      {
+        "text": "महाभारत में गांधारी ने अपने ज्येष्ठ पुत्र दुर्योधन से युद्ध न करने की विनती करते हुए क्या कहा था?",
+        "options": [
+          "युद्ध में धन की प्राप्ति होती है",
+          "युद्ध में धर्म की प्राप्ति होती है",
+          "शांति संधि करके पिता, मेरी, और शुभेच्छुकों का सम्मान करो",
+          "युद्ध ही एकमात्र समाधान है"
+        ],
+        "correctAnswer": 2,
+        "explanation": "गांधारी ने शांति की सलाह दी और सभी का सम्मान करने को कहा।"
+      },
+      {
+        "text": "'जाति' शब्द किसका द्योतक है?",
+        "options": [
+          "एक व्यक्तिगत पहचान",
+          "एक पदानुक्रमित सामाजिक वर्गीकरण",
+          "एक व्यावसायिक समूह",
+          "एक क्षेत्रीय समूह"
+        ],
+        "correctAnswer": 1,
+        "explanation": "जाति एक पदानुक्रमित सामाजिक श्रेणी है।"
+      },
+      {
+        "text": "ब्राह्मणों का यह मानना था कि वर्ण व्यवस्था की उत्पत्ति कैसी है?",
+        "options": ["मानव निर्मित", "सामाजिक सहमति पर आधारित", "दैवीय व्यवस्था", "शासकों द्वारा निर्धारित"],
+        "correctAnswer": 2,
+        "explanation": "ब्राह्मण ग्रंथों के अनुसार वर्ण व्यवस्था को दैवी उत्पत्ति बताया गया।"
+      },
+      {
+        "text": "धर्मसूत्रों और धर्मशास्त्रों में ब्राह्मणों के लिए कौन से कार्य निर्धारित थे?",
+        "options": [
+          "युद्ध करना और सुरक्षा देना",
+          "कृषि, गौपालन और व्यापार",
+          "अध्ययन, वेदों की शिक्षा, यज्ञ करना और करवाना, दान देना और लेना",
+          "तीनों 'उच्च' वर्णों की सेवा करना"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ब्राह्मणों के लिए अध्ययन, वेद-शिक्षण, यज्ञ व दान निर्धारित थे।"
+      },
+      {
+        "text": "क्षत्रियों के लिए कौन से कार्य निर्धारित थे?",
+        "options": [
+          "अध्ययन, वेदों की शिक्षा, यज्ञ करना",
+          "युद्ध करना, सुरक्षा, न्याय, वेद पढ़ना, यज्ञ करवाना, दान",
+          "कृषि, गौपालन और व्यापार",
+          "तीनों 'उच्च' वर्णों की सेवा करना"
+        ],
+        "correctAnswer": 1,
+        "explanation": "क्षत्रियों के कर्तव्य: युद्ध, सुरक्षा, न्याय, वेद अध्ययन, यज्ञ करना/करवाना, दान देना।"
+      },
+      {
+        "text": "वैश्यों के लिए कौन से कार्य निर्धारित थे?",
+        "options": [
+          "केवल अध्ययन और यज्ञ करना",
+          "केवल युद्ध करना",
+          "कृषि, गौपालन, व्यापार; वेद पढ़ना, यज्ञ करवाना, दान देना",
+          "केवल उच्च वर्णों की सेवा करना"
+        ],
+        "correctAnswer": 2,
+        "explanation": "वैश्य के कार्य: कृषि, पशुपालन, व्यापार और सत्कार्य।"
+      },
+      {
+        "text": "शूद्रों के लिए एकमात्र निर्धारित जीविका क्या थी?",
+        "options": [
+          "अध्ययन और व्यापार",
+          "कृषि और गौपालन",
+          "युद्ध करना और न्याय करना",
+          "तीनों 'उच्च' वर्णों की सेवा करना"
+        ],
+        "correctAnswer": 3,
+        "explanation": "शूद्रों के लिए उच्च वर्णों की सेवा ही मुख्‍य कार्य बताया गया।"
+      },
+      {
+        "text": "वर्ण व्यवस्था के नियमों के पालन हेतु ब्राह्मणों ने कौन सी तीन नीतियाँ अपनाईं?",
+        "options": [
+          "बल, आर्थिक प्रोत्साहन, धार्मिक उपदेश",
+          "दैवी उत्पत्ति बताना, शासकों को सलाह देना, प्रतिष्ठा को जन्म पर आधारित बताना",
+          "शिक्षा देना, व्यापार को बढ़ावा देना, सामाजिक समारोह आयोजित करना",
+          "केवल उच्च वर्णों को लाभ, निम्न वर्णों को दंड, बाहरी लोगों का बहिष्कार"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ब्राह्मणों ने जन्म पर आधारित प्रतिष्ठा, दैवी उत्पत्ति, शासकों को सलाह जैसी नीतियाँ अपनाईं।"
+      },
+      {
+        "text": "ऋग्वेद के पुरुषसूक्त के अनुसार ब्राह्मण आदि मानवपुरुष के किस अंग से उत्पन्न हुए?",
+        "options": ["भुजाओं से", "जंघा से", "पैरों से", "मुख से"],
+        "correctAnswer": 3,
+        "explanation": "ब्राह्मणों को पुरुष के मुख से उत्पन्न बताया गया।"
+      },
+      {
+        "text": "पुरुषसूक्त अनुसार, क्षत्रिय किस अंग से उत्पन्न हुए?",
+        "options": ["मुख से", "भुजाओं से", "जंघा से", "पैरों से"],
+        "correctAnswer": 1,
+        "explanation": "क्षत्रिय पुरुष के भुजाओं से उत्पन्न माने गए।"
+      },
+      {
+        "text": "पुरुषसूक्त अनुसार, वैश्य किस अंग से उत्पन्न हुए?",
+        "options": ["मुख से", "भुजाओं से", "जंघा से", "पैरों से"],
+        "correctAnswer": 2,
+        "explanation": "वैश्य पुरुष के जंघा से उत्पन्न माने गए हैं।"
+      },
+      {
+        "text": "पुरुषसूक्त अनुसार, शूद्र किस अंग से उत्पन्न हुए?",
+        "options": ["मुख से", "भुजाओं से", "जंघा से", "पैरों से"],
+        "correctAnswer": 3,
+        "explanation": "शूद्रों को पुरुष के पैरों से उत्पन्न बताया गया।"
+      }
+    ]
+
+    let score = 0;
+
+    // Dynamically create quiz questions
+    function loadQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      quizContainer.innerHTML = '';
+
+      questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+        question.options.forEach((option, optIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option btn btn-outline-secondary d-block text-start';
+          label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+          questionDiv.appendChild(label);
+        });
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation mt-2 container';
+        explanationDiv.id = `explanation${index}`;
+        explanationDiv.style.display = 'none';
+        explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+        questionDiv.appendChild(explanationDiv);
+
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    function submitQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+      let answered = new Array(questions.length).fill(false);
+      score = 0;
+
+      // Reset any previous coloring
+      inputs.forEach(input => {
+        input.parentElement.classList.remove('correct', 'incorrect');
+      });
+
+      // Iterate over each question
+      questions.forEach((question, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+        // Check if the question was answered
+        if (selected) {
+          const selectedValue = parseInt(selected.value);
+
+          // If answer is correct, add score, else deduct points
+          if (selectedValue === question.correctAnswer) {
+            score += 1;
+            selected.parentElement.classList.add('correct');
+          } else {
+            score -= 0;
+            selected.parentElement.classList.add('incorrect');
+          }
+
+          answered[index] = true;
+        }
+
+        // Mark correct answer if question was not answered or answered incorrectly
+        if (!answered[index] || selected.value != question.correctAnswer) {
+          options[question.correctAnswer].parentElement.classList.add('correct');
+        }
+
+        // Show explanation for each question
+        document.getElementById(`explanation${index}`).style.display = 'block';
+      });
+
+      // Display the result
+      document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+    }
+
+    // Load the quiz on page load
+    window.onload = loadQuiz;
+  </script>
+
+</body>
+
+</html>

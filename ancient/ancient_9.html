@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz - Chapter-3 ("बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600 ईस्वी)) </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .correct {
+      background-color: #d4edda !important;
+      color: green;
+    }
+
+    .incorrect {
+      background-color: #f8d7da !important;
+      color: red;
+    }
+
+    .explanation {
+      color: blue;
+    }
+
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container center-div">
+    <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+      <h3 class="text-center mb-4">MCQ Quiz - Chapter-3 ("बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600
+        ईस्वी)) </h3>
+      <div id="quiz-container">
+        <!-- Questions will be inserted here by JavaScript -->
+      </div>
+
+      <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+      <div id="result" class="mt-4"></div>
+    </div>
+  </div>
+
+  <script>
+    // Quiz questions
+    const questions = [{
+        "text": "लगभग 600 ई.पू. से 600 ईस्वी तक के काल में आर्थिक और राजनीतिक जीवन में हुए परिवर्तनों में से कौन-सा एक समकालीन समाज पर प्रभाव नहीं छोड़ पाया?",
+        "options": ["वन क्षेत्रों में कृषि का विस्तार", "शिल्प विशेषज्ञों के एक विशिष्ट सामाजिक समूह का उदय",
+          "संपत्ति के असमान वितरण से सामाजिक विषमताओं का बढ़ना", "साहित्यिक परंपराओं का पूर्ण अभाव"
+        ],
+        "correctAnswer": 3,
+        "explanation": "इस काल में साहित्यिक परंपराएँ मौजूद थीं, इसलिए 'पूर्ण अभाव' गलत है।"
+      },
+      {
+        "text": "इतिहासकार समाज में प्रचलित आचार-व्यवहार और रिवाजों का इतिहास लिखने के लिए किस मुख्य स्रोत का उपयोग करते हैं?",
+        "options": ["केवल पुरातात्विक खुदाई के अवशेष", "साहित्यिक परंपराएँ और अभिलेख",
+          "केवल विदेशी यात्रियों के वृत्तांत", "केवल मुद्राशास्त्र"
+        ],
+        "correctAnswer": 1,
+        "explanation": "साहित्यिक परंपराएँ और अभिलेख समाज के रिवाजों को समझने का मुख्य स्रोत हैं।"
+      },
+      {
+        "text": "महाभारत को किस प्रकार का एक विशाल काव्य ग्रंथ बताया गया है?",
+        "options": ["एक लघु कविता संग्रह", "एक विशाल महाकाव्य", "एक ऐतिहासिक उपन्यास", "एक धार्मिक सूक्ति संग्रह"],
+        "correctAnswer": 1,
+        "explanation": "महाभारत को 100,000 श्लोक वाला एक विशाल महाकाव्य कहा जाता है।"
+      },
+      {
+        "text": "महाभारत का समालोचनात्मक संस्करण तैयार करने की अत्यंत महत्वाकांक्षी परियोजना किस वर्ष शुरू हुई थी?",
+        "options": ["1900", "1919", "1930", "1947"],
+        "correctAnswer": 1,
+        "explanation": "यह परियोजना 1919 में पुणे के भंडारकर ओरिएंटल रिसर्च इंस्टीट्यूट में शुरू हुई।"
+      },
+      {
+        "text": "महाभारत का समालोचनात्मक संस्करण तैयार करने की परियोजना का नेतृत्व किसने किया था?",
+        "options": ["रोमिला थापर", "आर.एस. शर्मा", "वी.एस. सुकथांकर", "उमा चक्रवर्ती"],
+        "correctAnswer": 2,
+        "explanation": "इस परियोजना के मुख्य संपादक वी.एस. सुकथांकर थे।"
+      },
+      {
+        "text": "महाभारत के समालोचनात्मक संस्करण के लिए किस प्रकार की पांडुलिपियाँ एकत्रित की गई थीं?",
+        "options": ["केवल हिंदी पांडुलिपियाँ", "विभिन्न लिपियों में लिखी गई संस्कृत पांडुलिपियाँ",
+          "केवल पाली पांडुलिपियाँ", "विभिन्न क्षेत्रीय भाषाओं की पांडुलिपियाँ"
+        ],
+        "correctAnswer": 1,
+        "explanation": "देशभर से संस्कृत की पांडुलिपियाँ विभिन्न लिपियों में इकट्ठी की गईं।"
+      },
+      {
+        "text": "इस परियोजना को पूरा करने में कितने वर्ष लगे?",
+        "options": ["पच्चीस", "सैंतालीस", "साठ", "अस्सी"],
+        "correctAnswer": 1,
+        "explanation": "लगभग 47 वर्षों में यह समालोचनात्मक संस्करण पूरा हुआ।"
+      },
+      {
+        "text": "समालोचनात्मक संस्करण की प्रक्रिया में उभरी एक मुख्य बात क्या थी?",
+        "options": ["संस्कृत के कई पाठों के अनेक अंशों में असमानता", "समूचे उपमहाद्वीप में पांडुलिपियों में समानता",
+          "केवल दक्षिण भारत की पांडुलिपियों में समानता", "पांडुलिपियों में कोई क्षेत्रीय प्रभेद नहीं"
+        ],
+        "correctAnswer": 1,
+        "explanation": "विभिन्न अंशों में पाठ्य असमानता स्पष्ट दिखाई दी।"
+      },
+      {
+        "text": "पांडुलिपियों में पाए गए क्षेत्रीय प्रभेदों को कैसे संकलित किया गया था?",
+        "options": ["एक अलग ग्रंथ के रूप में", "मुख्य पाठ की पादटिप्पणियों और परिशिष्टों के रूप में",
+          "एक मौखिक परंपरा के रूप में", "पूरी तरह से हटा दिया गया"
+        ],
+        "correctAnswer": 1,
+        "explanation": "भिन्नताओं को फूटनोट और परिशिष्ट में दर्ज किया गया।"
+      },
+      {
+        "text": "इतिहासकार सामाजिक इतिहास के अनुशीलन हेतु मुख्य रूप से किस भाषा में ग्रंथों पर आधारित होते थे?",
+        "options": ["पाली", "प्राकृत", "तमिल", "संस्कृत (ब्राह्मणों द्वारा ब्राह्मणों के लिए लिखे गए)"],
+        "correctAnswer": 3,
+        "explanation": "ब्राह्मणों द्वारा संस्कृत में लिखे ग्रंथ सामाजिक मान्यताओं का प्रमुख स्रोत रहे।"
+      },
+      {
+        "text": "19वीं-20वीं सदी में संस्कृत ग्रंथों को इतिहासकार कैसे मानते थे?",
+        "options": ["उनमें जो लिखा है वही आचरण था", "उन्हें हमेशा प्रश्नवाचक दृष्टि से देखा",
+          "केवल साहित्यिक कल्पना समझा", "केवल कुछ विशेष समूहों तक सीमित माना"
+        ],
+        "correctAnswer": 0,
+        "explanation": "19वीं-20वीं सदी में इन्हें आदर्श हीन तौर पर सीधे आचरण मान लिया गया।"
+      },
+      {
+        "text": "तकनीकी भाषा में रिश्तेदारों को क्या कहा जाता है?",
+        "options": ["सामाजिक समूह", "जाति समूह", "familial समूह", "क्षेत्रीय समूह"],
+        "correctAnswer": 1,
+        "explanation": "रिश्तों को तकनीकी भाषा में जाति-समूहों के आधार पर वर्गीकृत किया जाता था।"
+      },
+      {
+        "text": "सामान्य लोगों के पारिवारिक संबंधों को पुनर्निर्मित करना क्यों मुश्किल था?",
+        "options": ["उनके बारे में साहित्यिक स्रोत नहीं", "केवल विशिष्ट परिवारों की जानकारी मिलती थी",
+          "सामान्य लोगों के संबंध कभी दर्ज नहीं", "सामान्य रिश्ते बहुत सरल थे"
+        ],
+        "correctAnswer": 1,
+        "explanation": "अक्सर साहित्यिक स्रोत उच्चवर्गीय परिवारों पर केंद्रित थे।"
+      },
+      {
+        "text": "महाभारत की मुख्य कथावस्तु किन दलों के संघर्ष का चित्रण करती है?",
+        "options": ["कौरव-पांडव", "यदु-चेदि", "कुरु-पांचाल", "वृष्णि-अंधक"],
+        "correctAnswer": 0,
+        "explanation": "महाभारत मुख्यतः कौरवों और पांडवों के बीच संघर्ष का वर्णन करता है।"
+      },
+      {
+        "text": "पितृवंशिकता में पुत्र पिता की मृत्यु के बाद किन पर अधिकार जमा सकता था?",
+        "options": ["कोई अधिकार नहीं", "सिर्फ राजसिंहासन", "संसाधनों और राजसिंहासन दोनों पर",
+          "केवल माँ की अनुमति से"],
+        "correctAnswer": 2,
+        "explanation": "पितृवंशिक समाज में पुत्र संपत्ति और पदवी दोनों का उत्तराधिकारी था।"
+      },
+      {
+        "text": "संस्कृत ग्रंथों में 'कुल' शब्द का प्रयोग किसके लिए होता है?",
+        "options": ["संबंधियों के बड़े समूह", "एक व्यवसाय समूह", "परिवार", "गाँव के सभी निवासी"],
+        "correctAnswer": 2,
+        "explanation": "'कुल' शब्द का अर्थ प्रायः परिवार होता है।"
+      },
+      {
+        "text": "'पितृवंशिकता' का अर्थ क्या है?",
+        "options": ["वंश माँ से", "वंश पिता से पुत्र-पौत्र…", "महिलाओं का प्रभुत्व", "संपत्ति केवल पुत्रियों को"],
+        "correctAnswer": 1,
+        "explanation": "पितृवंशिकता का अर्थ है वंश-पंक्ति पिता से पुत्र की ओर जाना।"
+      },
+      {
+        "text": "'मातृवंशिकता' शब्द का प्रयोग कब होता है?",
+        "options": ["वंश पिता से", "वंश माँ से", "संपत्ति केवल स्त्रियों को", "राजा का नाम मातृनाम पर"],
+        "correctAnswer": 1,
+        "explanation": "वंश यदि माँ से आगे चले तो उसे मातृवंशिकता कहते हैं।"
+      },
+      {
+        "text": "विवाह संस्कार का ऋग्वैदिक मंत्र लगभग कब जोड़ा गया?",
+        "options": ["2000 ई.पू.", "1000 ई.पू.", "500 ई.पू.", "200 ई.पू."],
+        "correctAnswer": 1,
+        "explanation": "लगभग 1000 ई.पू. का यह मंत्र विवाह में आज भी पढ़ा जाता है।"
+      },
+      {
+        "text": "ऋग्वेद मंत्र में 'यहाँ' और 'वहाँ' का तात्पर्य?",
+        "options": ["गाँव-नगर", "स्वर्ग-पृथ्वी", "पिता-पति का घर", "माता-पिता"],
+        "correctAnswer": 2,
+        "explanation": "यहाँ और वहाँ से अभिप्राय है पिता का और फिर पति का घर।"
+      },
+      {
+        "text": "महाभारत आदिपर्व अनुसार धृतराष्ट्र के बाद सिंहासन पर कौन बैठा?",
+        "options": ["पांडु", "दुर्योधन", "धृतराष्ट्र स्वयं", "युधिष्ठिर"],
+        "correctAnswer": 2,
+        "explanation": "धृतराष्ट्र स्वयं राजा बने पर उनकी अंधता बाधा बनी।"
+      },
+      {
+        "text": "दुर्योधन को पांडवों से ईर्ष्या क्यों हुई?",
+        "options": ["पांडव धनी थे", "पांडव बलवान थे", "लोग पांडवों को योग्य और सदाचारी मानते थे",
+          "पांडवों ने भूमि हड़प ली"
+        ],
+        "correctAnswer": 2,
+        "explanation": "नागरिक पांडवों को अधिक सदाचारी व योग्य समझते थे।"
+      },
+      {
+        "text": "पुत्रियों को पैतृक संसाधनों में हिस्सेदारी न होना और गोत्र से बाहर विवाह किस पद्धति का भाग था?",
+        "options": ["अंतर्विवाह", "बहिर्विवाह", "बहुपत्नी", "बहुपति"],
+        "correctAnswer": 1,
+        "explanation": "यह बहिर्विवाह प्रणाली का हिस्सा था।"
+      },
+      {
+        "text": "'कन्यादान' को धार्मिक कर्तव्य क्यों माना गया?",
+        "options": ["पुत्री को गोत्र में रखना", "उसी गोत्र से विवाह", "पैतृक संसाधनों में हिस्सा देना",
+          "उचित समय-उचित वर से विवाह कराना"
+        ],
+        "correctAnswer": 3,
+        "explanation": "कन्यादान का अर्थ है उचित समय व योग्य वर को पुत्री का विवाह सम्पन्न कराना।"
+      },
+      {
+        "text": "'अंतर्विवाह' में विवाह किनके बीच होता है?",
+        "options": ["गोत्र से बाहर", "भिन्न जाति", "वही समूह (गोत्र, कुल या जाति)", "विभिन्न देश"],
+        "correctAnswer": 2,
+        "explanation": "अंतर्विवाह का अर्थ है एक ही कुल, जाति या गोत्र में विवाह।"
+      }
+    ]
+
+    let score = 0;
+
+    // Dynamically create quiz questions
+    function loadQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      quizContainer.innerHTML = '';
+
+      questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+        question.options.forEach((option, optIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option btn btn-outline-secondary d-block text-start';
+          label.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
+                        ${option}
+                    `;
+          questionDiv.appendChild(label);
+        });
+
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation mt-2 container';
+        explanationDiv.id = `explanation${index}`;
+        explanationDiv.style.display = 'none';
+        explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+        questionDiv.appendChild(explanationDiv);
+
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    function submitQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+      let answered = new Array(questions.length).fill(false);
+      score = 0;
+
+      // Reset any previous coloring
+      inputs.forEach(input => {
+        input.parentElement.classList.remove('correct', 'incorrect');
+      });
+
+      // Iterate over each question
+      questions.forEach((question, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+        // Check if the question was answered
+        if (selected) {
+          const selectedValue = parseInt(selected.value);
+
+          // If answer is correct, add score, else deduct points
+          if (selectedValue === question.correctAnswer) {
+            score += 1;
+            selected.parentElement.classList.add('correct');
+          } else {
+            score -= 0;
+            selected.parentElement.classList.add('incorrect');
+          }
+
+          answered[index] = true;
+        }
+
+        // Mark correct answer if question was not answered or answered incorrectly
+        if (!answered[index] || selected.value != question.correctAnswer) {
+          options[question.correctAnswer].parentElement.classList.add('correct');
+        }
+
+        // Show explanation for each question
+        document.getElementById(`explanation${index}`).style.display = 'block';
+      });
+
+      // Display the result
+      document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+    }
+
+    // Load the quiz on page load
+    window.onload = loadQuiz;
+  </script>
+
+</body>
+
+</html>
