@@ -23,10 +23,10 @@ const subjectsConfig = {
                     { id: 'chapter2', name: 'Chapter-3 "बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600 ईस्वी)" (Part-2)', file: 'ancient/ancient_10.html' },
                     { id: 'chapter3', name: 'Chapter-3 "बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600 ईस्वी)" (Part-3)', file: 'ancient/ancient_11.html' },
                     { id: 'chapter4', name: 'Chapter-3 "बंधनत्व, जाति तथा वर्ग आर्थिक समाज (लगभग 600 ई.पू. से 600 ईस्वी)" (Part-4)', file: 'ancient/ancient_12.html' },
-                    { id: 'chapter5', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-1)', file: 'ancient/ancient_13.html' },
-                    { id: 'chapter6', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-2)', file: 'ancient/ancient_14.html' },
-                    { id: 'chapter7', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-3)', file: 'ancient/ancient_15.html' },
-                    { id: 'chapter8', name: 'Chapter-2 "राजा, किसान और नगर: आरंभिक राज्य और अर्थव्यवस्थाएँ (लगभग 600 ई.पू. से 600 ई.)" (Part-4)', file: 'ancient/ancient_16.html' }
+                    { id: 'chapter5', name: 'Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)") (Part-1)', file: 'ancient/ancient_13.html' },
+                    { id: 'chapter6', name: 'Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)") (Part-2)', file: 'ancient/ancient_14.html' },
+                    { id: 'chapter7', name: 'Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)") (Part-3)', file: 'ancient/ancient_15.html' },
+                    { id: 'chapter8', name: 'Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)") (Part-4)', file: 'ancient/ancient_16.html' }
                 ]
             },
             medieval: {
