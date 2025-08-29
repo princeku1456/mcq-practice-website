@@ -1,386 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCQ Quiz - Chapter-1 ("ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता") </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .question {
-            margin-bottom: 20px;
-        }
-        .option {
-            cursor: pointer;
-            padding: 10px;
-        }
-        .correct {
-            background-color: #d4edda !important;
-            color: green;
-        }
-        .incorrect {
-            background-color: #f8d7da !important;
-            color: red;
-        }
-        .explanation {
-            color: blue;
-        }
-        .center-div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quiz - Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से ईसा सन् 600 तक)") </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .correct {
+      background-color: #d4edda !important;
+      color: green;
+    }
+
+    .incorrect {
+      background-color: #f8d7da !important;
+      color: red;
+    }
+
+    .explanation {
+      color: blue;
+    }
+
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container center-div">
-        <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
-            <h3 class="text-center mb-4">MCQ Quiz - Chapter-1 ("ईंटें, मनके तथा अस्थियाँ हड़प्पा सभ्यता") </h3>
-            <div id="quiz-container">
-                <!-- Questions will be inserted here by JavaScript -->
-            </div>
+  <div class="container center-div">
+    <div class="col-lg-8 col-md-10 col-sm-12 p-5 border rounded shadow-lg">
+      <h3 class="text-center mb-4">MCQ Quiz - Chapter-4 ("विचारक, विश्वास और इमारतें सांस्कृतिक विकास (ईसा पूर्व 600 से
+        ईसा सन् 600 तक)") </h3>
+      <div id="quiz-container">
+        <!-- Questions will be inserted here by JavaScript -->
+      </div>
 
-            <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
-            <div id="result" class="mt-4"></div>
-        </div>
+      <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit</button>
+      <div id="result" class="mt-4"></div>
     </div>
+  </div>
 
-    <script>
-        // Quiz questions
-        const questions = [{
-    "text": "छेद करने के विशेष उपकरण कहाँ से मिले हैं?",
-    "options": [
-      "हड़प्पा और मोहनजोदड़ो",
-      "चन्हुदड़ो, लोथल और धोलावीरा",
-      "राखीगढ़ी और कालीबंगन",
-      "बनावली और कोटदीजी",
-      "उपर्युक्त में से एक से अधिक"
-    ],
-    "correctAnswer": 1,
-    "explanation": "छेद करने के उपकरण चन्हुदड़ो, लोथल और धोलावीरा से मिले हैं।"
-  },
-  {
-    "text": "नागेश्वर तथा बालाकोट जैसी बस्तियाँ शंख से बनी वस्तुओं के निर्माण के विशिष्ट केंद्र क्यों थे?",
-    "options": [
-      "वहाँ शंख आसानी से उपलब्ध था",
-      "वहाँ कुशल कारीगर थे",
-      "वहाँ बड़ी नदियाँ थीं",
-      "वहाँ व्यापारिक मार्ग थे",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 0,
-    "explanation": "इन तटीय स्थलों पर शंख आसानी से उपलब्ध था।"
-  },
-  {
-    "text": "शिल्प-उत्पादन के केंद्रों की पहचान के लिए पुरातत्वविद् सामान्यतः क्या ढूँढ़ते हैं?",
-    "options": [
-      "मंदिर और महल",
-      "प्रस्तर पिंड, पूरे शंख तथा ताँबा-अयस्क जैसा कच्चा माल, औज़ार, अपूर्ण वस्तुएँ, त्याग दिया गया माल तथा कूड़ा-करकट",
-      "केवल मुहरें और बाट",
-      "केवल अनाज के दाने",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "शिल्प केंद्रों की पहचान कच्चे माल और अपूर्ण वस्तुओं से होती है।"
-  },
-  {
-    "text": "हड़प्पा और मोहनजोदड़ो जैसे बड़े शहरों में भी शिल्प उत्पादन का कार्य किया जाता था, इसका संकेत किससे मिलता है?",
-    "options": [
-      "इमारतों की भव्यता से",
-      "बहुत छोटे टुकड़ों को कार्यस्थल पर ही छोड़ दिया जाने से",
-      "बड़ी संख्या में मजदूरों की उपस्थिति से",
-      "तैयार माल के ढेर से",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "छोटे टुकड़ों को छोड़ देना शिल्प उत्पादन का संकेत है।"
-  },
-  {
-    "text": "शिल्प उत्पादन के लिए कुछ कच्चा माल, जैसे कि पत्थर, लकड़ी तथा धातु, कहाँ से मँगवाने पड़ते थे?",
-    "options": [
-      "स्थानीय स्तर पर",
-      "जलोढ़क मैदान से बाहर के क्षेत्रों से",
-      "पड़ोसी देशों से",
-      "आंतरिक व्यापार से",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "कई कच्चे माल जलोढ़क मैदान से बाहर से आते थे।"
-  },
-  {
-    "text": "बैलगाड़ियों के मिट्टी से बने खिलौनों के प्रतिरूप क्या संकेत देते हैं?",
-    "options": [
-      "वे बच्चों के खिलौने थे",
-      "यह सामान तथा लोगों के लिए स्थल मार्गों द्वारा परिवहन का एक महत्वपूर्ण साधन था",
-      "वे धार्मिक अनुष्ठानों के लिए थे",
-      "वे कलात्मक प्रदर्शन के लिए थे",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "बैलगाड़ी के खिलौने परिवहन के महत्व को दर्शाते हैं।"
-  },
-  {
-    "text": "अत्यंत कीमती माने जाने वाले नीले रंग के पत्थर लाजवर्द मणि का सबसे अच्छा स्रोत कहाँ स्थित हड़प्पाई स्थल शोरतुघई था?",
-    "options": [
-      "मेसोपोटामिया में",
-      "सूदूर अफगानिस्तान में",
-      "ओमान में",
-      "दक्षिण भारत में",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "लाजवर्द मणि का स्रोत अफगानिस्तान में था।"
-  },
-  {
-    "text": "लोथल, कार्नेलियन, सेलखड़ी और धातु के स्रोतों के निकट स्थित था। कार्नेलियन कहाँ से मिलता था?",
-    "options": [
-      "दक्षिण राजस्थान से",
-      "गुजरात में भड़ाेच से",
-      "उत्तर प्रदेश से",
-      "मध्य एशिया से",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "कार्नेलियन गुजरात के भड़ौच से मिलता था।"
-  },
-  {
-    "text": "कच्चा माल प्राप्त करने की एक अन्य नीति क्या थी?",
-    "options": [
-      "पड़ोसी सभ्यताओं से युद्ध",
-      "स्थानीय समुदायों के साथ संचार",
-      "राजस्थान के खेतड़ी अंचल (ताँबे के लिए) तथा दक्षिण भारत (सोने के लिए) जैसे क्षेत्रों में अभियान भेजना",
-      "नदियों द्वारा व्यापार",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "खेतड़ी और दक्षिण भारत में अभियान भेजे जाते थे।"
-  },
-  {
-    "text": "खेतड़ी क्षेत्र में मिले साक्ष्यों को पुरातत्वविदों ने क्या नाम दिया है?",
-    "options": [
-      "हड़प्पा-जोधापुरा संस्कृति",
-      "गणेश्वर-जोधापुरा संस्कृति",
-      "कालीबंगन संस्कृति",
-      "अहर-बनास संस्कृति",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "खेतड़ी क्षेत्र की संस्कृति को गणेश्वर-जोधापुरा संस्कृति कहते हैं।"
-  },
-  {
-    "text": "रासायनिक विश्लेषण क्या दर्शाते हैं कि ओमान और हड़प्पाई पुरावस्तुओं, दोनों में किसके अंश मिले हैं?",
-    "options": [
-      "ताँबा",
-      "सोना",
-      "निकल",
-      "टिन",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "दोनों में निकल के अंश मिले हैं।"
-  },
-  {
-    "text": "ओमान में मिला एक विशिष्ट प्रकार का हड़प्पाई मर्तबान किस लिए प्रयोग किया जाता होगा?",
-    "options": [
-      "अनाज भंडारण के लिए",
-      "तरल पदार्थों के रिसाव को रोकने के लिए",
-      "पानी पीने के लिए",
-      "अनुष्ठानों के लिए",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "यह मर्तबान तरल पदार्थों के रिसाव को रोकने के लिए था।"
-  },
-  {
-    "text": "तीसरी सहस्राब्दि ईसा पूर्व में दिनांकित मेसोपोटामिया के लेखों में किस क्षेत्र से ताँबे के आगमन के संदर्भ मिलते हैं, जिसे संभवतः ओमान के लिए प्रयुक्त नाम था?",
-    "options": [
-      "मेलुहा",
-      "दिलमुन",
-      "मगन",
-      "उरुक",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "मगन संभवतः ओमान के लिए प्रयुक्त नाम था।"
-  },
-  {
-    "text": "मेसोपोटामिया के लेखों में दिलमुन, मगन तथा मेलुहा नामक क्षेत्रों से संपर्क की जानकारी मिलती है। मेलुहा संभवतः किसके लिए प्रयुक्त शब्द था?",
-    "options": [
-      "ओमान क्षेत्र के लिए",
-      "बहरीन द्वीप के लिए",
-      "हड़प्पाई क्षेत्र के लिए",
-      "मेसोपोटामिया क्षेत्र के लिए",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "मेलुहा हड़प्पाई क्षेत्र के लिए प्रयुक्त था।"
-  },
-  {
-    "text": "मेसोपोटामिया के लेख मेलुहा को किसका देश कहते हैं?",
-    "options": [
-      "किसानों का देश",
-      "नाविकों का देश",
-      "योद्धाओं का देश",
-      "व्यापारियों का देश",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "मेलुहा को नाविकों का देश कहा जाता था।"
-  },
-  {
-    "text": "मेसोपोटामिया के लेख मेलुहा से प्राप्त किन उत्पादों का उल्लेख नहीं करते हैं?",
-    "options": [
-      "कार्नेलियन",
-      "लाजवर्द मणि",
-      "ताँबा",
-      "लोहा",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 3,
-    "explanation": "लोहा हड़प्पा कालीन धातु नहीं था।"
-  },
-  {
-    "text": "मेसोपोटामियाई मिथक में हाज़ा पक्षी का उल्लेख है, जिसे कई पुरातत्वविदों का मानना है कि यह कौन सा पक्षी था?",
-    "options": [
-      "तोता",
-      "हंस",
-      "मोर",
-      "कबूतर",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "हाज़ा पक्षी संभवतः मोर था।"
-  },
-  {
-    "text": "मुहरों और मुद्रांकनों का प्रयोग किसलिए होता था?",
-    "options": [
-      "केवल कलात्मक प्रदर्शन के लिए",
-      "लंबी दूरी के संपर्कों को सुविधाजनक बनाने के लिए",
-      "राजा की पहचान के लिए",
-      "धार्मिक अनुष्ठानों के लिए",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "मुहरें लंबी दूरी के व्यापारिक संपर्कों को सुविधाजनक बनाती थीं।"
-  },
-  {
-    "text": "हड़प्पाई लिपि में लगभग कितने चिह्न हैं?",
-    "options": [
-      "50 से 100",
-      "100 से 200",
-      "375 से 400 के बीच",
-      "500 से 600",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 2,
-    "explanation": "हड़प्पाई लिपि में लगभग 375 से 400 चिह्न हैं।"
-  },
-  {
-    "text": "हड़प्पाई लिपि किस ओर से किस ओर लिखी जाती थी?",
-    "options": [
-      "बाईं से दाईं ओर",
-      "दाईं से बाईं ओर",
-      "ऊपर से नीचे",
-      "नीचे से ऊपर",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "हड़प्पाई लिपि दाईं से बाईं ओर लिखी जाती थी।"
-  },
-  {
-    "text": "बाट सामान्यतः किस पत्थर से बनाए जाते थे?",
-    "options": [
-      "संगमरमर",
-      "चार्ट",
-      "बलुआ पत्थर",
-      "ग्रेनाइट",
-      "उपर्युक्त में से कोई नहीं"
-    ],
-    "correctAnswer": 1,
-    "explanation": "बाट सामान्यतः चार्ट नामक पत्थर से बनाए जाते थे।"
-  }]
-  let score = 0;
+  <script>
+    // Quiz questions
+    const questions = [{
+        "text": "इस अध्याय में इतिहासकारों द्वारा किन विषयों का अध्ययन किया जाएगा?",
+        "options": [
+          "केवल दार्शनिकों के विचार और मौखिक परंपराएँ",
+          "समाज में दार्शनिकों की स्थिति, उनके विचारों का संग्रह और स्थापत्य व मूर्तिकला में अभिव्यक्ति",
+          "युद्ध और साम्राज्यों का उत्थान",
+          "आर्थिक नीतियों और व्यापार मार्गों का विकास"
+        ],
+        "correctAnswer": 1,
+        "explanation": "अध्याय में विचारों की विविधता, उनके समाज में प्रभाव और स्थापत्य/मूर्ति कला में अभिव्यक्ति जैसे सामाजिक व सांस्कृतिक पहलुओं का अध्ययन किया जाता है।"
+      },
+      {
+        "text": "बौद्ध धर्म के विकास के संदर्भ में अध्याय में क्या विशेष बात उल्लिखित है?",
+        "options": [
+          "यह पूरी तरह से अन्य परंपराओं से स्वतंत्र विकसित हुआ।",
+          "इसका विकास कई अन्य परंपराओं के साथ निरंतर वाद-विवाद और संवाद के माध्यम से हुआ।",
+          "इसने सभी अन्य समकालीन परंपराओं को समाप्त कर दिया।",
+          "यह केवल लिखित परंपराओं तक ही सीमित था।"
+        ],
+        "correctAnswer": 1,
+        "explanation": "बौद्ध धर्म का विकास अन्य परंपराओं से संवाद और बहस के माध्यम से ही संभव हुआ।"
+      },
+      {
+        "text": "इतिहासकारों द्वारा विचारों और विश्वासों की दुनिया के पुनर्निर्माण के लिए किन स्रोतों का उपयोग किया जाता है?",
+        "options": [
+          "केवल साहित्यिक ग्रंथ",
+          "केवल भौतिक साक्ष्य जैसे इमारतें और अभिलेख",
+          "बौद्ध, जैन और ब्राह्मण ग्रंथ, इमारतें, अभिलेख आदि सभी स्रोत",
+          "केवल विदेशी यात्रियों के वृत्तांत"
+        ],
+        "correctAnswer": 2,
+        "explanation": "विचारों व विश्वास के पुनर्निर्माण हेतु ग्रंथ, इमारतें, अभिलेख सभी जरूरी साक्ष्य हैं।"
+      },
+      {
+        "text": "उस युग की बची हुई इमारतों में सबसे सुरक्षित किसे बताया गया है?",
+        "options": [
+          "अजंता की गुफाएँ",
+          "सांची का स्तूप",
+          "अमरावती स्तूप",
+          "नालंदा विश्वविद्यालय"
+        ],
+        "correctAnswer": 1,
+        "explanation": "सांची का स्तूप भारत की सबसे सुरक्षित प्राचीन इमारत रही।"
+      },
+      {
+        "text": "मेजर अलेक्जेंडर कनिंघम ने सांची में क्या कार्य किया?",
+        "options": [
+          "केवल इमारतों को ध्वस्त कर दिया।",
+          "अवशेषों का निरीक्षण, चित्र बनाए, अभिलेख पढ़े, खुदाई की।",
+          "केवल स्थानीय लोगों से जानकारी एकत्र की।",
+          "मूर्तियाँ यूरोप भेज दीं।"
+        ],
+        "correctAnswer": 1,
+        "explanation": "कनिंघम ने सांची का गहरा अध्ययन, चित्रांकन और खुदाई की।"
+      },
+      {
+        "text": "भोपाल की किस नवाब की आत्मकथा 'ताज-उल-इकबाल तारीख भोपाल' से उद्धरण दिया गया है?",
+        "options": [
+          "सुल्ताना जहाँ बेगम",
+          "शाहजहाँ बेगम",
+          "खुसरो बेगम",
+          "सिकंदर बेगम"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'ताज-उल-इकबाल' शाहजहाँ बेगम की आत्मकथा है।"
+      },
+      {
+        "text": "19वीं सदी में यूरोपीय लोग सांची के स्तूप में क्यों रुचि रखते थे?",
+        "options": [
+          "इसे ध्वस्त करना चाहते थे।",
+          "पूर्वी तोरणद्वार को संग्रहालयों में प्रदर्शित करना चाहते थे।",
+          "नया शहर बसाना चाहते थे।",
+          "केवल स्थानीय कलाकृतियों का अध्ययन करना चाहते थे।"
+        ],
+        "correctAnswer": 1,
+        "explanation": "वे स्तूप के तोरणद्वार संग्रहालय हेतु चाहते थे।"
+      },
+      {
+        "text": "फ्रांसीसी और अंग्रेज सांची के पूर्वी तोरणद्वार को क्यों वहीं छोड़ गए?",
+        "options": [
+          "भोपाल के शासकों ने अनुमति नहीं दी।",
+          "प्रतिकृति से संतुष्ट हो गए।",
+          "तकनीकी कठिनाइयाँ थीं।",
+          "पर्याप्त धन नहीं था।"
+        ],
+        "correctAnswer": 1,
+        "explanation": "वे प्रतिकृति बनाकर मूल कृति वहीं छोड़ गए।"
+      },
+      {
+        "text": "अध्याय में उल्लिखित 'सांस्कृतिक विकास' की अवधि क्या है?",
+        "options": [
+          "ईसा पूर्व 1500 से ईसा पूर्व 1000 तक",
+          "ईसा पूर्व 600 से ईसा संवत् 600 तक",
+          "ईसा संवत् 600 से संवत् 1200 तक",
+          "ईसा संवत् 1200 से 1800 तक"
+        ],
+        "correctAnswer": 1,
+        "explanation": "प्रमुख सांस्कृतिक विकास ईसा पूर्व 600 से ईसा 600 तक हुआ।"
+      },
+      {
+        "text": "सांची के प्राचीन स्थल के रख-रखाव के लिए किस शासक ने अनुदान दिया?",
+        "options": [
+          "शाहजहाँ बेगम व सुल्ताना जहाँ बेगम",
+          "कनिंघम",
+          "लॉर्ड कर्जन",
+          "रॉबर्ट क्लाइव"
+        ],
+        "correctAnswer": 0,
+        "explanation": "शाहजहाँ बेगम और उनकी पुत्री सुल्ताना जहाँ बेगम ने संरक्षण के लिए अनुदान दिया।"
+      },
+      {
+        "text": "जॉन मार्शल ने सांची पर अपने ग्रंथ किसे समर्पित किए?",
+        "options": [
+          "ब्रिटिश सरकार",
+          "फ्रांसीसी सरकार",
+          "सुल्ताना जहाँ बेगम",
+          "भारतीय पुरातत्व सर्वेक्षण"
+        ],
+        "correctAnswer": 2,
+        "explanation": "सांची पर अपने ग्रंथों को मार्शल ने सुल्ताना जहाँ बेगम को समर्पित किया।"
+      },
+      {
+        "text": "सुल्ताना जहाँ बेगम ने सांची के संरक्षण में क्या विशेष योगदान दिया?",
+        "options": [
+          "दीवार बनवाई",
+          "संग्रहालय और अतिथि गृह के लिए अनुदान दिया",
+          "मूर्ति हटवाई",
+          "विदेशी पर्यटकों को रोका"
+        ],
+        "correctAnswer": 1,
+        "explanation": "उन्होंने संग्रहालय और अतिथि गृह का अनुदान दिया।"
+      },
+      {
+        "text": "सांची का स्तूप समूह क्यों बचा रहा?",
+        "options": [
+          "बहुत दुर्गम था",
+          "रेलवे ठेकेदार, निर्माताओं और यूरोपीय संग्रहकर्ता ले जाने से चूक गए",
+          "स्थानीयों ने छिपाया",
+          "बहुत छोटा था"
+        ],
+        "correctAnswer": 1,
+        "explanation": "यूरोपीय संग्रहकर्ता और रेलवे ठेकेदार इसे नष्ट नहीं कर सके।"
+      },
+      {
+        "text": "रेल यात्रा में सांची का स्तूप कैसा दिखता है?",
+        "options": [
+          "समतल भूमि पर साधारण इमारत",
+          "पहाड़ी के ऊपर मुकुट जैसा स्तूप",
+          "नदी किनारे किला",
+          "घने जंगल में अवशेष"
+        ],
+        "correctAnswer": 1,
+        "explanation": "सांची पहाड़ी के ऊपर मुकुट जैसी आकृति में दिखता है।"
+      },
+      {
+        "text": "सांची पहाड़ी पर किन संरचनाओं का समूह दिखता है?",
+        "options": [
+          "केवल एक गोलाकार ढाँचा",
+          "एक विशाल ढाँचा, पाँचवीं शती का मंदिर, कई अन्य इमारतें",
+          "मंदिर और छोटी बस्ती",
+          "केवल दीवारें"
+        ],
+        "correctAnswer": 1,
+        "explanation": "स्तूप, मंदिर, अन्य इमारतें: सारा समूह दिखाई देता है।"
+      },
+      {
+        "text": "सांची की महत्ता समझने हेतु किन स्रोतों का अध्ययन किया जा सकता है?",
+        "options": [
+          "केवल मौखिक परंपराएँ",
+          "ग्रंथ, मूर्ति, स्थापत्य, अभिलेख",
+          "केवल विदेशी अभिलेख",
+          "केवल लोककथाएँ"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ग्रंथ, मूर्ति, स्थापत्य, अभिलेख सभी जरूरी स्रोत हैं।"
+      },
+      {
+        "text": "ईसा पूर्व प्रथम सहस्राब्दि का काल विश्व इतिहास में क्यों मोड़ माना जाता है?",
+        "options": [
+          "केवल बड़े साम्राज्य उभरे",
+          "जरथुस्त्र, खुंगत्सी, सुकरात, बुद्ध, महावीर आदि चिंतकों का उद्भव हुआ",
+          "केवल तकनीकी नवाचार हुए",
+          "केवल व्यापार मार्ग खुले"
+        ],
+        "correctAnswer": 1,
+        "explanation": "इस काल में विश्व स्तर पर महान दार्शनिकों का उद्भव हुआ।"
+      },
+      {
+        "text": "भारत में इस काल में किस चिंता/दार्शनिकों के नाम मिलते हैं?",
+        "options": [
+          "चाणक्य, आर्यभट्ट",
+          "महावीर, बुद्ध",
+          "पाणिनि, पतंजलि",
+          "कालिदास, भास"
+        ],
+        "correctAnswer": 1,
+        "explanation": "भारत में इस युग के दो महान दार्शनिक महावीर और बुद्ध रहे।"
+      },
+      {
+        "text": "पूर्व वैदिक परंपरा का स्रोत क्या है?",
+        "options": [
+          "अथर्ववेद",
+          "यजुर्वेद",
+          "सामवेद",
+          "ऋग्वेद"
+        ],
+        "correctAnswer": 3,
+        "explanation": "ऋग्वेद से ही हमें इस काल का प्रारंभिक वैदिक जीवन मालूम होता है।"
+      },
+      {
+        "text": "ऋग्वेद में किन देवताओं की स्तुतियाँ संग्रहीत हैं?",
+        "options": [
+          "ब्रह्मा, विष्णु, महेश",
+          "अग्नि, इंद्र, सोम",
+          "वरुण, मित्र, सूर्य",
+          "पृथ्वी, आकाश, वायु"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ऋग्वेद में सबसे ज़्यादा स्तुतियाँ अग्नि, इंद्र, सोम की हैं।"
+      },
+      {
+        "text": "ऋग्वेद के अनुसार यज्ञ के समय लोग किनके लिए प्रार्थना करते थे?",
+        "options": [
+          "केवल मोक्ष या निर्वाण",
+          "केवल धन व विस्तार",
+          "मवेशी, बेटे, स्वास्थ्य, दीर्घायु",
+          "केवल आध्यात्मिक ज्ञान"
+        ],
+        "correctAnswer": 2,
+        "explanation": "लोग अपने यज्ञों में सांसारिक सुख, मवेशी, स्वास्थ्य, संतति आदि मांगते थे।"
+      },
+      {
+        "text": "1000-500 ईसा पूर्व में राजसूय-अश्वमेध जैसे यज्ञ कौन करता था?",
+        "options": [
+          "सामान्य गृहपति",
+          "सरदार व राजा",
+          "केवल ब्राह्मण पुरोहित",
+          "व्यापारी वर्ग"
+        ],
+        "correctAnswer": 1,
+        "explanation": "जटिल यज्ञ मुख्य रूप से सरदार-राजा करवाते थे।"
+      },
+      {
+        "text": "उपनिषदों की मुख्य जिज्ञासाएँ क्या थीं?",
+        "options": [
+          "केवल शासन कला",
+          "जीवन का अर्थ, मृत्यु के बाद जीवन की संभावना, पुनर्जन्म",
+          "कृषि व व्यापार तकनीक",
+          "केवल स्वर्ग/नरक"
+        ],
+        "correctAnswer": 1,
+        "explanation": "उपनिषद मुख्यतः जीवन-मृत्यु, पुनर्जन्म जैसे सवालों को उठाते हैं।"
+      },
+      {
+        "text": "वैदिक परंपरा से बाहर के कुछ दार्शनिक किस बात पर सवाल खड़ा कर रहे थे?",
+        "options": [
+          "क्या समाज में जाति जरूरी है?",
+          "क्या सत्य एक होता है या अनेक?",
+          "क्या देवताओं की पूजा आवश्यक है?",
+          "क्या राजा का अधिकार दैवी है?"
+        ],
+        "correctAnswer": 1,
+        "explanation": "वेदांत से बाहर के दार्शनिक 'सत्य' के स्वरूप पर प्रशन कर रहे थे।"
+      },
+      {
+        "text": "छांदोग्य उपनिषद अनुसार \"सच्चा यज्ञ\" क्या है?",
+        "options": [
+          "अग्नि-आहुति",
+          "बहती वायु जो सबको शुद्ध करती है",
+          "मंत्रोच्चार",
+          "तपस्या"
+        ],
+        "correctAnswer": 1,
+        "explanation": "छांदोग्य में 'हवा को सबका पवित्र करने वाला सच्चा यज्ञ' कहा गया।"
+      }
+    ]
 
-        // Dynamically create quiz questions
-        function loadQuiz() {
-            const quizContainer = document.getElementById('quiz-container');
-            quizContainer.innerHTML = '';
 
-            questions.forEach((question, index) => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+    let score = 0;
 
-                question.options.forEach((option, optIndex) => {
-                    const label = document.createElement('label');
-                    label.className = 'option btn btn-outline-secondary d-block text-start';
-                    label.innerHTML = `
+    // Dynamically create quiz questions
+    function loadQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      quizContainer.innerHTML = '';
+
+      questions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.innerHTML = `<p><strong>${index + 1}. ${question.text}</strong></p>`;
+
+        question.options.forEach((option, optIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option btn btn-outline-secondary d-block text-start';
+          label.innerHTML = `
                         <input type="radio" name="q${index}" value="${optIndex}" class="me-2">
                         ${option}
                     `;
-                    questionDiv.appendChild(label);
-                });
+          questionDiv.appendChild(label);
+        });
 
-                const explanationDiv = document.createElement('div');
-                explanationDiv.className = 'explanation mt-2 container';
-                explanationDiv.id = `explanation${index}`;
-                explanationDiv.style.display = 'none';
-                explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
-                questionDiv.appendChild(explanationDiv);
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation mt-2 container';
+        explanationDiv.id = `explanation${index}`;
+        explanationDiv.style.display = 'none';
+        explanationDiv.innerHTML = `<p><strong>Explanation: </strong>${question.explanation}</p>`;
+        questionDiv.appendChild(explanationDiv);
 
-                quizContainer.appendChild(questionDiv);
-            });
+        quizContainer.appendChild(questionDiv);
+      });
+    }
+
+    function submitQuiz() {
+      const quizContainer = document.getElementById('quiz-container');
+      const inputs = quizContainer.querySelectorAll('input[type="radio"]');
+      let answered = new Array(questions.length).fill(false);
+      score = 0;
+
+      // Reset any previous coloring
+      inputs.forEach(input => {
+        input.parentElement.classList.remove('correct', 'incorrect');
+      });
+
+      // Iterate over each question
+      questions.forEach((question, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+        // Check if the question was answered
+        if (selected) {
+          const selectedValue = parseInt(selected.value);
+
+          // If answer is correct, add score, else deduct points
+          if (selectedValue === question.correctAnswer) {
+            score += 1;
+            selected.parentElement.classList.add('correct');
+          } else {
+            score -= 0;
+            selected.parentElement.classList.add('incorrect');
+          }
+
+          answered[index] = true;
         }
 
-        function submitQuiz() {
-            const quizContainer = document.getElementById('quiz-container');
-            const inputs = quizContainer.querySelectorAll('input[type="radio"]');
-            let answered = new Array(questions.length).fill(false);
-            score = 0;
-
-            // Reset any previous coloring
-            inputs.forEach(input => {
-                input.parentElement.classList.remove('correct', 'incorrect');
-            });
-
-            // Iterate over each question
-            questions.forEach((question, index) => {
-                const selected = document.querySelector(`input[name="q${index}"]:checked`);
-                const options = document.querySelectorAll(`input[name="q${index}"]`);
-
-                // Check if the question was answered
-                if (selected) {
-                    const selectedValue = parseInt(selected.value);
-
-                    // If answer is correct, add score, else deduct points
-                    if (selectedValue === question.correctAnswer) {
-                        score += 1;
-                        selected.parentElement.classList.add('correct');
-                    } else {
-                        score -= 0;
-                        selected.parentElement.classList.add('incorrect');
-                    }
-
-                    answered[index] = true;
-                }
-
-                // Mark correct answer if question was not answered or answered incorrectly
-                if (!answered[index] || selected.value != question.correctAnswer) {
-                    options[question.correctAnswer].parentElement.classList.add('correct');
-                }
-
-                // Show explanation for each question
-                document.getElementById(`explanation${index}`).style.display = 'block';
-            });
-
-            // Display the result
-            document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+        // Mark correct answer if question was not answered or answered incorrectly
+        if (!answered[index] || selected.value != question.correctAnswer) {
+          options[question.correctAnswer].parentElement.classList.add('correct');
         }
 
-        // Load the quiz on page load
-        window.onload = loadQuiz;
-    </script>
+        // Show explanation for each question
+        document.getElementById(`explanation${index}`).style.display = 'block';
+      });
+
+      // Display the result
+      document.getElementById('result').innerHTML = `<h5>Your Score: ${score}</h5>`;
+    }
+
+    // Load the quiz on page load
+    window.onload = loadQuiz;
+  </script>
 
 </body>
+
 </html>
